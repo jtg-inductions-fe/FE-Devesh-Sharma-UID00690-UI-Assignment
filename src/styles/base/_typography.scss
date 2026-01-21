@@ -9,8 +9,10 @@
 }
 
 @each $name, $size in $text-sizes {
-    .text--#{$name} {
-        font-size: functions.toRem($size);
+    @if $name != 'base' {
+        .text--#{$name} {
+            font-size: functions.toRem($size);
+        }
     }
 }
 

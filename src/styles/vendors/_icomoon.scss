@@ -1,9 +1,11 @@
+@use '../abstracts/variables' as *;
+
 @font-face {
     font-family: 'Icomoon';
     src:
-        url('/assets/fonts/icomoon/Icomoon.woff2') format('woff2'),
-        url('/assets/fonts/icomoon/Icomoon.woff') format('woff'),
-        url('/assets/fonts/icomoon/Icomoon.ttf') format('truetype');
+        url('#{$font-path}/icomoon/Icomoon.woff2') format('woff2'),
+        url('#{$font-path}/icomoon/Icomoon.woff') format('woff'),
+        url('#{$font-path}/icomoon/Icomoon.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: block;
