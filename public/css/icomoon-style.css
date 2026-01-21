@@ -1,9 +1,6 @@
 @font-face {
     font-family: 'Icomoon';
-    src:
-        url('fonts/Icomoon.woff2') format('woff2'),
-        url('fonts/Icomoon.ttf') format('truetype'),
-        url('fonts/Icomoon.woff') format('woff');
+    src: url('/fonts/Icomoon.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -12,7 +9,7 @@
 [class^='icon-'],
 [class*=' icon-'] {
     /* Use !important to prevent extensions from overriding this font. */
-    font-family: 'Icomoon' !important;
+    font-family: 'Icomoon', sans-serif !important;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;

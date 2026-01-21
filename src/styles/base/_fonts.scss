@@ -5,7 +5,7 @@
     font-family: 'Josefin Sans';
     src: url('#{$font-path}/Josefin_Sans/JosefinSans-Bold.ttf');
     font-weight: 700;
-    font-style: bold;
+    font-style: normal;
 }
 
 @font-face {
@@ -20,7 +20,7 @@
     font-family: 'Poppins';
     src: url('#{$font-path}/Poppins/Poppins-Bold.ttf');
     font-weight: 700;
-    font-style: bold;
+    font-style: normal;
 }
 
 @font-face {
@@ -34,12 +34,12 @@
     font-family: 'Poppins';
     src: url('#{$font-path}/Poppins/Poppins-Regular.ttf');
     font-weight: 400;
-    font-style: nomral;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Poppins';
     src: url('#{$font-path}/Poppins/Poppins-Light.ttf');
     font-weight: 300;
-    font-style: nomral;
+    font-style: normal;
 }
