@@ -1,0 +1,27 @@
+@use '../abstracts/colors';
+@use '../abstracts/functions';
+@use '../abstracts/variables' as *;
+
+.text {
+    font-size: functions.toRem(map-get($text-sizes, 'base'));
+    color: colors.$color-text;
+    line-height: 1.5;
+}
+
+@each $name, $size in $text-sizes {
+    .text--#{$name} {
+        font-size: functions.toRem($size);
+    }
+}
+
+.text--primary {
+    color: colors.$color-primary;
+}
+
+.text--secondary {
+    color: colors.$color-secondary;
+}
+
+.text--inverted {
+    color: colors.$color-bg;
+}

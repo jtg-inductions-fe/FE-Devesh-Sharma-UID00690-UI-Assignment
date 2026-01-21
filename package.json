@@ -1,8 +1,8 @@
 {
-    "name": "static-html-base-template",
-    "description": "",
+    "name": "alura-books",
+    "description": "Alura Books",
     "keywords": [],
-    "version": "0.0.0",
+    "version": "0.0.1",
     "private": true,
     "type": "module",
     "scripts": {

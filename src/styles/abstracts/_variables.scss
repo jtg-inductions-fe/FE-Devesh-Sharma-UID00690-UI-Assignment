@@ -1,1 +1,18 @@
-$font-path: '/fonts';
+// Path to font files
+$font-path: '/assets/fonts';
+
+// Base font size in pixels
+$base-font-size: 16;
+
+// Used font families
+$sl-font-family--text: 'Poppins', system-ui, sans-serif;
+$sl-font-family--display: 'Josefin Sans', system-ui, sans-serif;
+
+$text-sizes: (
+    'sm': 14,
+    'base': 16,
+    'md': 18,
+    'lg': 24,
+    'xl': 26,
+    'xxl': 36,
+);

@@ -1,0 +1,11 @@
+@use 'sass:math';
+@use 'variables' as *;
+
+/// Convert given pixles value to rem according to font scale
+/// @access public
+/// @param {Number} value - Value to convert
+/// @requires $font-scale
+@function toRem($value) {
+    $remValue: math.div($value, $base-font-size) + rem;
+    @return $remValue;
+}
