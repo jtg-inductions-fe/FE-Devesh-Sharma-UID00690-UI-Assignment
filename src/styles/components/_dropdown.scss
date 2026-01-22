@@ -54,6 +54,6 @@
     &__group {
         padding: px-to-rem(24);
         color: $color-primary;
-        font-weight: map-get($font-weights, 'bold');
+        @include fw('bold');
     }
 }
