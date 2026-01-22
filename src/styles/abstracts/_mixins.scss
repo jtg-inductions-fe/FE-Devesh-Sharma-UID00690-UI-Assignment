@@ -1,3 +1,4 @@
+@use 'functions' as *;
 @use 'variables' as *;
 
 /// Generates a min-width media query from the defined breakpoints.
@@ -39,5 +40,35 @@
         }
     } @else {
         @error 'No value found for `#{$breakpoint}` in $breakpoints map.';
+    }
+}
+
+/// Helper to quickly set font size according to a value from the $font-sizes map
+/// @param {String} $size - The key from the $font-sizes map (e.g., 'lg').
+/// @requires $font-sizes
+/// @example scss - Usage
+///   .title {
+///       @include fs('4xl');
+///   }
+@mixin fs($size) {
+    @if map-has-key($font-sizes, $size) {
+        font-size: px-to-rem(map-get($font-sizes, $size));
+    } @else {
+        @warn "Unknown font-size: #{$size}.";
+    }
+}
+
+/// Helper to quickly set font weight according to a value from the $font-weights map
+/// @param {String} $weight - The key from the $font-weights map (e.g., 'bold').
+/// @requires $font-weights
+/// @example scss - Usage
+///   .title {
+///       @include fw('bold');
+///   }
+@mixin fw($weight) {
+    @if map-has-key($font-weights, $weight) {
+        font-weight: map-get($font-weights, $weight);
+    } @else {
+        @warn "Unknown font-weight: #{$weight}.";
     }
 }

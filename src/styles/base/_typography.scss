@@ -1,23 +1,42 @@
 @use '../abstracts' as *;
 
-.text {
-    font-size: px-to-rem(map-get($font-sizes, 'base'));
-    color: $color-text;
-    line-height: 1.5;
-}
+.heading {
+    @include fs('md');
+    @include fw('bold');
 
-@each $name, $size in $font-sizes {
-    @if $name != 'base' {
-        .fs--#{$name} {
-            font-size: px-to-rem($size);
-        }
+    &--small {
+        @include fs('base');
+    }
+
+    &--light {
+        @include fw('light');
+    }
+
+    &--medium {
+        @include fw('medium');
     }
 }
 
-@each $name, $weight in $font-weights {
-    @if $name != 'regular' {
-        .fw--#{$name} {
-            font-weight: $weight;
+.body {
+    @include fs('base');
+    @include fw('regular');
+
+    &--light {
+        @include fw('light');
+    }
+
+    &--medium {
+        @include fw('medium');
+    }
+
+    &--small {
+        @include fs('sm');
+    }
+
+    &--responsive {
+        @include fs('sm');
+        @include respond-above('medium') {
+            @include fs('base');
         }
     }
 }
