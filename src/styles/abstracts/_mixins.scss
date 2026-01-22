@@ -54,7 +54,7 @@
     @if map-has-key($font-sizes, $size) {
         font-size: px-to-rem(map-get($font-sizes, $size));
     } @else {
-        @warn "Unknown font-size: #{$size}.";
+        @error "Unknown font-size: #{$size}.";
     }
 }
 
@@ -69,7 +69,7 @@
     @if map-has-key($font-weights, $weight) {
         font-weight: map-get($font-weights, $weight);
     } @else {
-        @warn "Unknown font-weight: #{$weight}.";
+        @error "Unknown font-weight: #{$weight}.";
     }
 }
 
