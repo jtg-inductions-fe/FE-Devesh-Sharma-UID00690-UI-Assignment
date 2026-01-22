@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.button-icon {
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: px-to-rem(12);
+    cursor: pointer;
+
+    &--mobile-only {
+        @include respond-above('medium') {
+            display: none;
+        }
+    }
+
+    &__icon {
+        font-size: px-to-rem(32);
+        color: $color-secondary;
+    }
+
+    &__label {
+        font-family: $font-family-text;
+        font-size: px-to-rem(map-get($font-sizes, 'lg'));
+        display: none;
+
+        @include respond-above('large') {
+            display: block;
+        }
+    }
+}

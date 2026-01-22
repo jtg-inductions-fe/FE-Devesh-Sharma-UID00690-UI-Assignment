@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: px-to-rem(12);
+
+    &__logo {
+        width: px-to-rem(40);
+        height: px-to-rem(40);
+    }
+
+    &__textmark {
+        display: none;
+
+        @include respond-above('medium') {
+            display: flex;
+        }
+    }
+}

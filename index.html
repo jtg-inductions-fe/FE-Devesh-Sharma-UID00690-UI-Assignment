@@ -66,7 +66,123 @@
         />
     </head>
     <body>
-        <h1>Alura Books</h1>
+        <header class="header">
+            <nav class="navbar">
+                <div class="navbar__left">
+                    <div class="navbar__hamburger dropdown">
+                        <button
+                            class="navbar__hamburger-icon dropdown__trigger"
+                            aria-label="Open menu"
+                        >
+                            <span class="icon-menu"></span>
+                        </button>
+                        <ul class="dropdown__menu">
+                            <li class="dropdown__group">Categorias</li>
+                            <li class="dropdown__item">
+                                <a href="#" class="dropdown__link"
+                                    >Programacao</a
+                                >
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#" class="dropdown__link">Front-end</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#" class="dropdown__link"
+                                    >Infraestrutura</a
+                                >
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#" class="dropdown__link">Business</a>
+                            </li>
+                            <li class="dropdown__item">
+                                <a href="#" class="dropdown__link"
+                                    >Design & UX</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="branding">
+                        <img
+                            alt="Alura Books logo"
+                            class="branding__logo"
+                            src="/assets/images/logo.svg"
+                        />
+                        <img
+                            class="branding__textmark"
+                            src="/assets/images/textmark.svg"
+                            alt="Alura Books"
+                        />
+                    </a>
+                    <ul class="navbar__list">
+                        <li class="navbar__item dropdown">
+                            <button
+                                class="navbar__link dropdown__trigger"
+                                aria-label="Open menu"
+                            >
+                                Categorias
+                            </button>
+                            <ul class="dropdown__menu">
+                                <li class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Programacao</a
+                                    >
+                                </li>
+                                <li class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Front-end</a
+                                    >
+                                </li>
+                                <li class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Infraestrutura</a
+                                    >
+                                </li>
+                                <li class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Business</a
+                                    >
+                                </li>
+                                <li class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Design & UX</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#" class="navbar__link">Favoritos</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#" class="navbar__link">Minha Estante</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar__right">
+                    <button
+                        class="navbar__button button-icon button-icon--mobile-only"
+                        aria-label="Favoritos"
+                    >
+                        <span class="button-icon__icon icon-heart"></span>
+                        <span class="button-icon__label">Favoritos</span>
+                    </button>
+                    <button
+                        class="navbar__button button-icon"
+                        aria-label="Minha sacola"
+                    >
+                        <span class="button-icon__icon icon-bag"></span>
+                        <span class="button-icon__label">Minha sacola</span>
+                    </button>
+                    <button
+                        class="navbar__button button-icon"
+                        aria-label="Meu Perfil"
+                    >
+                        <span class="button-icon__icon icon-user"></span>
+                        <span class="button-icon__label">Meu perfil</span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
