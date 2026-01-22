@@ -10,14 +10,13 @@ Before submitting this PR, please verify the following items are complete:
 
 ### 🛠️ Code Quality & Standards
 
-[ ] Code builds cleanly without errors or warnings
-[ ] Code follows team coding conventions and is free of commented-out code
-[ ] No sensitive values (e.g. secrets, credentials) are hardcoded
-[ ] Self-review completed
+- [ ] Code builds cleanly without errors or warnings
+- [ ] Code follows team coding conventions and is free of commented-out code
+- [ ] No sensitive values (e.g. secrets, credentials) are hardcoded
+- [ ] Self-review completed
 
 ### ✅ Testing & Validation
 
-[ ] Manual (dev) testing is
-complete
+-   [ ] Manual (dev) testing is complete
 
 ## 📸 Screenshots (if applicable)

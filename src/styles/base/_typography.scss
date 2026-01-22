@@ -17,7 +17,7 @@
 @each $name, $weight in $font-weights {
     @if $name != 'regular' {
         .fw--#{$name} {
-            font-size: px-to-rem($weight);
+            font-weight: $weight;
         }
     }
 }
