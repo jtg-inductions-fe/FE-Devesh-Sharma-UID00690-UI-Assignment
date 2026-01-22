@@ -17,6 +17,6 @@ Before submitting this PR, please verify the following items are complete:
 
 ### ✅ Testing & Validation
 
--   [ ] Manual (dev) testing is complete
+- [ ] Manual (dev) testing is complete
 
 ## 📸 Screenshots (if applicable)
