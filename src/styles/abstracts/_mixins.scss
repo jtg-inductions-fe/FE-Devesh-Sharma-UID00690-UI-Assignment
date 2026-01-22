@@ -48,9 +48,9 @@
 /// @requires $font-sizes
 /// @example scss - Usage
 ///   .title {
-///       @include fs('4xl');
+///       @include text-size('4xl');
 ///   }
-@mixin fs($size) {
+@mixin text-size($size) {
     @if map-has-key($font-sizes, $size) {
         font-size: px-to-rem(map-get($font-sizes, $size));
     } @else {
@@ -63,12 +63,30 @@
 /// @requires $font-weights
 /// @example scss - Usage
 ///   .title {
-///       @include fw('bold');
+///       @include text-weight('bold');
 ///   }
-@mixin fw($weight) {
+@mixin text-weight($weight) {
     @if map-has-key($font-weights, $weight) {
         font-weight: map-get($font-weights, $weight);
     } @else {
         @warn "Unknown font-weight: #{$weight}.";
     }
+}
+
+/// Flexbox utility mixin
+/// Defaults to: flex flex-row items-center justify-start gap-0
+/// @param {String} $direction - flexbox direction
+/// @param {String} $justify   - justify-content value
+/// @param {String} $align     - aling-items value
+/// @param {Length} $gap       - gap between elements
+/// @example scss - Usage
+/// .stack {
+///    @include flexbox(column, center, flex-start, 10px);
+///  }
+@mixin flexbox($direction: row, $justify: flex-start, $align: center, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
 }
