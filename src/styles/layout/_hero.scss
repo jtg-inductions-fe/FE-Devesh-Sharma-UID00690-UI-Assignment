@@ -1,0 +1,53 @@
+@use '../abstracts' as *;
+
+.hero {
+    background: $color-secondary-gradient;
+    color: $color-bg;
+    text-align: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: px-to-rem(24);
+
+        padding-block: px-to-rem(32);
+
+        @include respond-above('medium') {
+            padding-block: px-to-rem(84);
+        }
+    }
+
+    &__typography {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: px-to-rem(8);
+
+        @include respond-above('medium') {
+            gap: px-to-rem(2);
+        }
+    }
+
+    &__title {
+        @include fs('md');
+        @include fw('bold');
+
+        @include respond-above('medium') {
+            @include fs('4xl');
+        }
+    }
+
+    &__subtitle {
+        @include fs('base');
+        @include fw('medium');
+
+        max-width: px-to-rem(316);
+
+        @include respond-above('medium') {
+            max-width: unset;
+        }
+    }
+}

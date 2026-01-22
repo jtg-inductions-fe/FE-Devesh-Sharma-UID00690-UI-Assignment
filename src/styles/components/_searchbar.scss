@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.searchbar {
+    border: 1px solid $color-bg;
+    border-radius: px-to-rem(24);
+    text-align: center;
+    font-family: $font-family-text, icomoon;
+
+    padding: px-to-rem(10) px-to-rem(24);
+    height: px-to-rem(44);
+    width: px-to-rem(380);
+
+    @include fs('sm');
+
+    &::placeholder {
+        color: $color-bg;
+    }
+
+    @include respond-above('medium') {
+        @include fs('base');
+        height: px-to-rem(56);
+        width: px-to-rem(476);
+    }
+
+    @include respond-above('large') {
+        width: px-to-rem(586);
+    }
+}
