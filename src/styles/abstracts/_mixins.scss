@@ -1,24 +1,43 @@
-@use 'breakpoints' as *;
+@use 'variables' as *;
 
-/// Responsive breakpoint manager
-/// @access public
-/// @param {String} $breakpoint - Breakpoint
+/// Generates a min-width media query from the defined breakpoints.
+/// @param {String} $breakpoint - The key from the $breakpoints map (e.g., 'medium').
 /// @requires $breakpoints
-@mixin respond-to($breakpoint) {
-    $raw-query: map-get($breakpoints, $breakpoint);
+/// @example scss - Usage
+///   .element {
+///     @include respond-above('medium') {
+///       display: flex;
+///     }
+///   }
+@mixin respond-above($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
 
-    @if $raw-query {
-        $query: if(
-            type-of($raw-query) == 'string',
-            unquote($raw-query),
-            inspect($raw-query)
-        );
-
-        @media #{$query} {
+        @media (min-width: $value) {
             @content;
         }
     } @else {
-        @error 'No value found for `#{$breakpoint}`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
+        @error 'No value found for `#{$breakpoint}` in $breakpoints map.';
+    }
+}
+
+/// Generates a max-width media query from the defined breakpoints.
+/// @param {String} $breakpoint - The key from the $breakpoints map (e.g., 'large').
+/// @requires $breakpoints
+/// @example scss - Usage
+///   .sidebar {
+///     @include respond-below('medium') {
+///       display: none;
+///     }
+///   }
+@mixin respond-below($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+
+        @media (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}` in $breakpoints map.';
     }
 }

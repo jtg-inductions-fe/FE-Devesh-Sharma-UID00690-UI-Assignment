@@ -1,18 +1,36 @@
-// Path to font files
+/// Path to font files
 $font-path: '/assets/fonts';
 
-// Base font size in pixels
+/// Base font size in pixels
 $base-font-size: 16;
 
 // Used font families
-$sl-font-family--text: 'Poppins', system-ui, sans-serif;
-$sl-font-family--display: 'Josefin Sans', system-ui, sans-serif;
+$font-family-text: 'Poppins', system-ui, sans-serif;
 
-$text-sizes: (
+/// Map of font sizes for the application.
+$font-sizes: (
     'sm': 14,
     'base': 16,
     'md': 18,
-    'lg': 24,
-    'xl': 26,
-    'xxl': 36,
+    'lg': 20,
+    'xl': 24,
+    'xxl': 26,
+    'xxxl': 36,
+);
+
+/// Map of font weights for the application.
+$font-weights: (
+    'light': 300,
+    'regular': 400,
+    'medium': 500,
+    'bold': 700,
+);
+
+/// Map of breakpoints for the application.
+/// @type Map
+/// @prop {px} medium [1024px] - Breakpoint for tablets and small desktops.
+/// @prop {px} large [1728px] - Breakpoint for large desktop monitors.
+$breakpoints: (
+    'medium': 1024px,
+    'large': 1728px,
 );

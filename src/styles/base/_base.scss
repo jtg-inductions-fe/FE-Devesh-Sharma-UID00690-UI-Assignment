@@ -1,16 +1,14 @@
-@use '../abstracts/colors';
-@use '../abstracts/variables';
-@use '../abstracts/functions';
+@use '../abstracts/' as *;
 
 // Set up a decent box model on the root element
 html {
     box-sizing: border-box;
 
     // Set defaults
-    font-family: variables.$sl-font-family--text;
-    background-color: colors.$color-bg;
-    color: colors.$color-text;
-    font-size: functions.toRem(16);
+    font-family: $font-family-text;
+    background-color: $color-bg;
+    color: $color-text;
+    font-size: px-to-rem(16);
 }
 
 // Make all elements from the DOM inherit from the parent box-sizing

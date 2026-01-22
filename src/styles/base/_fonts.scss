@@ -1,39 +1,11 @@
-@use '../abstracts/variables' as *;
-
-// Josefin Sans
-@font-face {
-    font-family: 'Josefin Sans';
-    src:
-        url('#{$font-path}/josefin-sans/JosefinSans-Bold.woff2') format('woff2'),
-        url('#{$font-path}/josefin-sans/JosefinSans-Bold.woff') format('woff'),
-        url('#{$font-path}/josefin-sans/JosefinSans-Bold.ttf')
-            format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Josefin Sans';
-    src:
-        url('#{$font-path}/josefin-sans/JosefinSans-Regular.woff2')
-            format('woff2'),
-        url('#{$font-path}/josefin-sans/JosefinSans-Regular.woff')
-            format('woff'),
-        url('#{$font-path}/josefin-sans/JosefinSans-Regular.ttf')
-            format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
+@use '../abstracts/' as *;
 
 // --- Poppins ---
 @font-face {
     font-family: 'Poppins';
     src:
         url('#{$font-path}/poppins/Poppins-Bold.woff2') format('woff2'),
-        url('#{$font-path}/poppins/Poppins-Bold.woff') format('woff'),
-        url('#{$font-path}/poppins/Poppins-Bold.ttf') format('truetype');
+        url('#{$font-path}/poppins/Poppins-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -43,8 +15,7 @@
     font-family: 'Poppins';
     src:
         url('#{$font-path}/poppins/Poppins-Medium.woff2') format('woff2'),
-        url('#{$font-path}/poppins/Poppins-Medium.woff') format('woff'),
-        url('#{$font-path}/poppins/Poppins-Medium.ttf') format('truetype');
+        url('#{$font-path}/poppins/Poppins-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -54,8 +25,7 @@
     font-family: 'Poppins';
     src:
         url('#{$font-path}/poppins/Poppins-Regular.woff2') format('woff2'),
-        url('#{$font-path}/poppins/Poppins-Regular.woff') format('woff'),
-        url('#{$font-path}/poppins/Poppins-Regular.ttf') format('truetype');
+        url('#{$font-path}/poppins/Poppins-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -65,8 +35,7 @@
     font-family: 'Poppins';
     src:
         url('#{$font-path}/poppins/Poppins-Light.woff2') format('woff2'),
-        url('#{$font-path}/poppins/Poppins-Light.woff') format('woff'),
-        url('#{$font-path}/poppins/Poppins-Light.ttf') format('truetype');
+        url('#{$font-path}/poppins/Poppins-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;

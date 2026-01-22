@@ -1,29 +1,23 @@
-@use '../abstracts/colors';
-@use '../abstracts/functions';
-@use '../abstracts/variables' as *;
+@use '../abstracts' as *;
 
 .text {
-    font-size: functions.toRem(map-get($text-sizes, 'base'));
-    color: colors.$color-text;
+    font-size: px-to-rem(map-get($font-sizes, 'base'));
+    color: $color-text;
     line-height: 1.5;
 }
 
-@each $name, $size in $text-sizes {
+@each $name, $size in $font-sizes {
     @if $name != 'base' {
-        .text--#{$name} {
-            font-size: functions.toRem($size);
+        .fs--#{$name} {
+            font-size: px-to-rem($size);
         }
     }
 }
 
-.text--primary {
-    color: colors.$color-primary;
-}
-
-.text--secondary {
-    color: colors.$color-secondary;
-}
-
-.text--inverted {
-    color: colors.$color-bg;
+@each $name, $weight in $font-weights {
+    @if $name != 'regular' {
+        .fw--#{$name} {
+            font-size: px-to-rem($weight);
+        }
+    }
 }

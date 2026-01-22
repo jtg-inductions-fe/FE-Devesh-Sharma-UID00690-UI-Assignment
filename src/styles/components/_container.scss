@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.container {
+    max-width: px-to-rem(428);
+    margin-inline: auto;
+
+    @include respond-above('medium') {
+        max-width: px-to-rem(1024);
+    }
+
+    @include respond-above('large') {
+        max-width: px-to-rem(1728);
+    }
+}
