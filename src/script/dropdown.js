@@ -31,7 +31,7 @@ function toggleDropdown(event) {
     let menu = trigger.nextSibling;
 
     // Skip non-element nodes (text nodes, comments, etc.)
-    while (menu && menu.nodeType != 1) {
+    while (menu && menu.nodeType !== 1) {
         menu = menu.nextSibling;
     }
     // Verify the node is an element and is a dropdown menu
@@ -41,13 +41,21 @@ function toggleDropdown(event) {
 
     // Close any existing dropdowns
     const isOpen = menu.classList.contains(DROPDOWN_MENU_OPEN_CLASS);
-    if (activeDropdown !== null || isOpen) {
+
+    // If clicking the same dropdown that's open, just close it
+    if (isOpen) {
         closeDropdown();
         return;
     }
 
+    // Close any other open dropdown before opening this one
+    if (activeDropdown !== null) {
+        closeDropdown();
+    }
+
     menu.classList.add(DROPDOWN_MENU_OPEN_CLASS);
     trigger.classList.add(DROPDOWN_TRIGGER_ACTIVE_CLASS);
+    trigger.setAttribute('aria-expanded', true);
     activeDropdown = menu;
     activeTrigger = trigger;
 }
@@ -60,6 +68,7 @@ function closeDropdown() {
 
     activeDropdown.classList.remove(DROPDOWN_MENU_OPEN_CLASS);
     activeTrigger.classList.remove(DROPDOWN_TRIGGER_ACTIVE_CLASS);
+    activeTrigger.setAttribute('aria-expended', false);
 
     activeDropdown = null;
     activeTrigger = null;
