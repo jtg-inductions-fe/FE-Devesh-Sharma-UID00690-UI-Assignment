@@ -22,15 +22,15 @@
 
     &__right {
         margin-right: px-to-rem(28);
-        gap: px-to-rem(16);
+        gap: px-to-rem(32);
 
         @include respond-above('medium') {
-            gap: px-to-rem(56);
-            margin-right: px-to-rem(8);
+            gap: px-to-rem(68);
+            margin-right: px-to-rem(16);
         }
 
         @include respond-above('large') {
-            gap: px-to-rem(44);
+            gap: px-to-rem(56);
         }
     }
 
