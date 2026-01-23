@@ -32,17 +32,17 @@
     }
 
     &__title {
-        @include fs('md');
-        @include fw('bold');
+        @include text-size('md');
+        @include text-weight('bold');
 
         @include respond-above('medium') {
-            @include fs('4xl');
+            @include text-size('4xl');
         }
     }
 
     &__subtitle {
-        @include fs('base');
-        @include fw('medium');
+        @include text-size('base');
+        @include text-weight('medium');
 
         max-width: px-to-rem(316);
 

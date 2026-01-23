@@ -10,14 +10,14 @@
     height: px-to-rem(44);
     width: px-to-rem(380);
 
-    @include fs('sm');
+    @include text-size('sm');
 
     &::placeholder {
         color: $color-bg;
     }
 
     @include respond-above('medium') {
-        @include fs('base');
+        @include text-size('base');
         height: px-to-rem(56);
         width: px-to-rem(476);
     }
