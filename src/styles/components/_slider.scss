@@ -1,0 +1,116 @@
+@use '../abstracts' as *;
+
+.slider {
+    position: relative;
+    max-width: 100%;
+
+    &__viewport {
+        padding-block: px-to-rem(12);
+        overflow: visible;
+
+        @include respond-above('medium') {
+            padding-block: px-to-rem(72) px-to-rem(48);
+            overflow: hidden;
+        }
+
+        @include respond-above('large') {
+            padding-block: px-to-rem(34) px-to-rem(48);
+        }
+    }
+    &__container {
+        display: flex;
+        touch-action: pan-y pinch-zoom;
+    }
+
+    &__slide {
+        flex: 0 0 52%;
+        @include flexbox(row, center, center, 0);
+        min-width: 0;
+
+        @include respond-above('medium') {
+            flex: 0 0 35%;
+        }
+    }
+
+    &__image {
+        object-fit: contain;
+        width: px-to-rem(180);
+
+        @include respond-above('medium') {
+            width: px-to-rem(192);
+        }
+
+        @include respond-above('large') {
+            width: px-to-rem(180);
+        }
+    }
+
+    &__button {
+        width: px-to-rem(48);
+        height: px-to-rem(48);
+
+        background: $color-secondary-gradient;
+        border-radius: 50%;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include flexbox(row, center, center, 0);
+        display: none;
+
+        @include respond-above('medium') {
+            display: flex;
+        }
+
+        &:focus {
+            border: 2px solid $color-primary;
+            outline: 2px solid $color-primary;
+        }
+
+        .icon-chevron-left,
+        .icon-chevron-right {
+            color: $color-bg;
+            font-size: px-to-rem(12);
+        }
+
+        &--prev {
+            left: px-to-rem(-16);
+        }
+
+        &--next {
+            right: px-to-rem(-16);
+        }
+    }
+
+    &__dots {
+        @include flexbox(row, center, center, px-to-rem(8));
+        padding-block: px-to-rem(4);
+
+        @include respond-above('medium') {
+            gap: px-to-rem(12);
+        }
+    }
+
+    &__dot {
+        width: px-to-rem(8);
+        height: px-to-rem(8);
+
+        background: $color-muted;
+        border-radius: 50%;
+
+        &--selected {
+            background: $color-secondary-gradient;
+        }
+
+        &:focus {
+            border: 2px solid $color-primary;
+            outline: 2px solid $color-primary;
+        }
+
+        @include respond-above('medium') {
+            width: px-to-rem(12);
+            height: px-to-rem(12);
+        }
+    }
+}

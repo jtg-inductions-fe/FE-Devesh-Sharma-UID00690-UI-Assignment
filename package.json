@@ -39,5 +39,10 @@
             "eslint --max-warnings=0"
         ],
         "*.{html,scss,json}": "prettier --check"
+    },
+    "dependencies": {
+        "embla-carousel": "^9.0.0-rc01",
+        "embla-carousel-accessibility": "^9.0.0-rc01",
+        "embla-carousel-autoplay": "^9.0.0-rc01"
     }
 }

@@ -16,6 +16,12 @@
         color: $color-bg;
     }
 
+    &:focus {
+        &::placeholder {
+            color: transparentize($color-bg, $amount: 0.6);
+        }
+    }
+
     @include respond-above('medium') {
         @include text-size('base');
         height: px-to-rem(56);

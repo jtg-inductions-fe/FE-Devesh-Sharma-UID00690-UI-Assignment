@@ -102,7 +102,7 @@ const handleOutsideClick = (event) => {
     }
 };
 
-// ────────────────────────────────────────────────
+// -----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', initDropdowns);
 
 // Use capture phase? Usually not needed for this case — bubbling is fine

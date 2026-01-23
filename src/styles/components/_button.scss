@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+.button {
+    background-color: $color-primary;
+    color: $color-bg;
+    padding: px-to-rem(12);
+    @include text-weight('bold');
+
+    &:focus {
+        outline: 2px solid $color-secondary;
+    }
+}

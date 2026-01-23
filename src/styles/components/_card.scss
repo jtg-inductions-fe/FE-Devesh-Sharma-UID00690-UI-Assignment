@@ -1,0 +1,110 @@
+@use '../abstracts' as *;
+
+.card {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: px-to-rem(16);
+    border-radius: px-to-rem(10);
+    background-color: $color-bg;
+    width: 100%;
+
+    @include respond-above('medium') {
+        max-width: px-to-rem(588);
+        padding-top: px-to-rem(24);
+        padding-right: px-to-rem(24);
+    }
+
+    @include respond-above('large') {
+        max-width: px-to-rem(588);
+        padding-bottom: px-to-rem(24);
+    }
+
+    &__main {
+        @include flexbox(row, space-between, flex-start, px-to-rem(12));
+    }
+
+    &__content {
+        @include flexbox(column, flex-start, flex-start, px-to-rem(8));
+    }
+
+    &__media {
+        @include flexbox(column, center, flex-end, px-to-rem(36));
+    }
+
+    &__subtitle {
+        color: $color-primary;
+
+        @include respond-above('large') {
+            @include text-size('3xl');
+        }
+    }
+
+    &__title {
+        color: $color-secondary;
+    }
+
+    &__body {
+        max-width: px-to-rem(148);
+
+        @include respond-above('medium') {
+            max-width: px-to-rem(335);
+        }
+    }
+
+    &__actions {
+        font-size: px-to-rem(24);
+        @include flexbox(row, center, flex-end, px-to-rem(20));
+
+        .icon {
+            width: px-to-rem(30);
+            height: px-to-rem(30);
+
+            display: grid;
+            place-items: center;
+        }
+
+        @include respond-above('medium') {
+            font-size: px-to-rem(24);
+        }
+    }
+
+    &__thumbnail {
+        width: px-to-rem(162);
+        height: px-to-rem(168);
+        object-fit: cover;
+
+        @include respond-above('medium') {
+            width: px-to-rem(146);
+            height: px-to-rem(151);
+        }
+    }
+
+    &__button {
+        width: px-to-rem(161);
+
+        @include respond-above('medium') {
+            width: px-to-rem(146);
+        }
+    }
+
+    &__footer {
+        @include flexbox(row, space-between, center, 0);
+        padding-block: px-to-rem(8);
+        padding-left: px-to-rem(12);
+
+        @include respond-above('medium') {
+            padding-block: px-to-rem(24) px-to-rem(4);
+            padding-left: px-to-rem(0);
+        }
+
+        @include respond-above('large') {
+            padding-block: px-to-rem(8);
+            padding-left: px-to-rem(0);
+        }
+    }
+
+    &--author {
+        .card__footer {
+            padding-top: px-to-rem(24);
+        }
+    }
+}
