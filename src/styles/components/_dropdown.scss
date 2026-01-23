@@ -23,7 +23,9 @@
         // Animation
         transform: scaleY(0);
         transform-origin: top;
-        transition: transform 0.2s;
+        transition:
+            transform 0.2s,
+            visibility 0.2s;
         visibility: hidden;
         pointer-events: none;
 
@@ -58,6 +60,6 @@
     &__group {
         padding: px-to-rem(24);
         color: $color-primary;
-        @include fw('bold');
+        @include text-weight('bold');
     }
 }
