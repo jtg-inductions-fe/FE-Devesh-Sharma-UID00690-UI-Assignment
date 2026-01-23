@@ -24,6 +24,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.icon-star:before {
+    content: '\f008';
+}
 .icon-menu:before {
     content: '\f007';
 }

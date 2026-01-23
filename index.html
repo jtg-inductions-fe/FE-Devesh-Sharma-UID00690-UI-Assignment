@@ -60,6 +60,21 @@
             type="font/woff2"
             crossorigin="anonymous"
         />
+
+        <noscript>
+            <style>
+                header,
+                main,
+                footer {
+                    display: none;
+                }
+                .noscript-message {
+                    text-align: center;
+                    padding: 50px;
+                    font-family: sans-serif;
+                }
+            </style>
+        </noscript>
     </head>
 
     <body>
@@ -161,7 +176,9 @@
             <section class="hero">
                 <div class="container hero__container">
                     <div class="hero__typography">
-                        <h2 class="hero__title">Já sabe por onde começar?</h2>
+                        <h2 class="hero__title heading">
+                            Já sabe por onde começar?
+                        </h2>
                         <p class="hero__subtitle">
                             Encontre em nossa estante o que precisa para seu
                             desenvolvimento!
@@ -177,6 +194,13 @@
                 </div>
             </section>
         </main>
+
+        <noscript>
+            <div class="noscript-message">
+                <h1>JavaScript Disabled</h1>
+                <p>Please enable JavaScript to view this website.</p>
+            </div>
+        </noscript>
 
         <script type="module" src="./src/script/index.js"></script>
     </body>
