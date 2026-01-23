@@ -60,6 +60,21 @@
             type="font/woff2"
             crossorigin="anonymous"
         />
+
+        <noscript>
+            <style>
+                header,
+                main,
+                footer {
+                    display: none;
+                }
+                .noscript-message {
+                    text-align: center;
+                    padding: 50px;
+                    font-family: sans-serif;
+                }
+            </style>
+        </noscript>
     </head>
 
     <body>
@@ -156,6 +171,13 @@
                 </div>
             </nav>
         </header>
+
+        <noscript>
+            <div class="noscript-message">
+                <h1>JavaScript Disabled</h1>
+                <p>Please enable JavaScript to view this website.</p>
+            </div>
+        </noscript>
 
         <script type="module" src="./src/script/index.js"></script>
     </body>
