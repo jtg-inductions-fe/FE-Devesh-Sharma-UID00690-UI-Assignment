@@ -22,7 +22,7 @@
 
     &__label {
         font-family: $font-family-text;
-        @include fs('lg');
+        @include text-size('lg');
         display: none;
 
         @include respond-above('large') {

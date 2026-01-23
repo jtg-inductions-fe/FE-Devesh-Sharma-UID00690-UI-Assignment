@@ -21,11 +21,11 @@ let activeTrigger = null;
  * @param {MouseEvent} event - The click event object
  * @this {HTMLElement} - The trigger button element
  */
-function toggleDropdown(event) {
+const toggleDropdown = (event) => {
     event.stopPropagation();
 
     /** @type {HTMLElement} */
-    const trigger = this;
+    const trigger = event.target;
 
     /** @type {HTMLElement} */
     let menu = trigger.nextSibling;
@@ -58,12 +58,12 @@ function toggleDropdown(event) {
     trigger.setAttribute('aria-expanded', true);
     activeDropdown = menu;
     activeTrigger = trigger;
-}
+};
 
 /**
  * Closes the currently open dropdown (if any).
  */
-function closeDropdown() {
+const closeDropdown = () => {
     if (activeDropdown === null) return;
 
     activeDropdown.classList.remove(DROPDOWN_MENU_OPEN_CLASS);
@@ -72,24 +72,24 @@ function closeDropdown() {
 
     activeDropdown = null;
     activeTrigger = null;
-}
+};
 
 /**
  * Initializes all dropdown triggers after the DOM is fully loaded.
  */
-function initDropdowns() {
+const initDropdowns = () => {
     document
         .querySelectorAll(`.${DROPDOWN_TRIGGER_CLASS}`)
         .forEach((trigger) => {
             trigger.addEventListener('click', toggleDropdown);
         });
-}
+};
 
 /**
  * Global click handler to close dropdown when clicking outside
  * @param {MouseEvent} event
  */
-function handleOutsideClick(event) {
+const handleOutsideClick = (event) => {
     if (!activeDropdown) return;
 
     // Check if click happened inside any open dropdown or its trigger
@@ -100,7 +100,7 @@ function handleOutsideClick(event) {
     if (!clickedInside) {
         closeDropdown();
     }
-}
+};
 
 // ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', initDropdowns);
