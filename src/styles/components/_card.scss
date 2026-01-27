@@ -5,6 +5,7 @@
     padding: px-to-rem(16);
     border-radius: px-to-rem(10);
     background-color: $color-bg;
+    max-width: px-to-rem(588);
     width: 100%;
 
     @include respond-above('medium') {
@@ -19,7 +20,7 @@
     }
 
     &__main {
-        @include flexbox(row, space-between, flex-start, px-to-rem(12));
+        @include flexbox(row, space-between, flex-start, px-to-rem(18));
     }
 
     &__content {
@@ -60,6 +61,10 @@
 
             display: grid;
             place-items: center;
+        }
+
+        .button-icon {
+            outline-offset: 4px;
         }
 
         @include respond-above('medium') {

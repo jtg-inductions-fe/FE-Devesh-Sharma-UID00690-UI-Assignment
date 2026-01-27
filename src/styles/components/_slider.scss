@@ -20,12 +20,14 @@
     &__container {
         @include flexbox;
         touch-action: pan-y pinch-zoom;
+        margin-left: -px-to-rem(20);
     }
 
     &__slide {
-        flex: 0 0 52%;
+        flex: 0 0 50%;
         @include flexbox(row, center, center, 0);
         min-width: 0;
+        padding-left: px-to-rem(20);
 
         @include respond-above('medium') {
             flex: 0 0 35%;
@@ -34,7 +36,8 @@
 
     &__image {
         object-fit: contain;
-        width: px-to-rem(180);
+        width: 100%;
+        max-height: px-to-rem(400);
 
         @include respond-above('medium') {
             width: px-to-rem(192);
@@ -58,6 +61,9 @@
 
         @include flexbox(row, center, center, 0);
         display: none;
+        transition:
+            transform 0.5s,
+            box-shadow 0.5s;
 
         @include respond-above('medium') {
             display: flex;
@@ -66,6 +72,11 @@
         &:focus-visible {
             border: 2px solid $color-primary;
             outline: 2px solid $color-primary;
+        }
+
+        &:hover {
+            transform: translateY(-60%);
+            box-shadow: 0 5px 10px transparentize($color: #000000, $amount: 0.6);
         }
 
         .icon-chevron-left,
@@ -103,9 +114,15 @@
             background: $color-secondary-gradient;
         }
 
-        &:focus-visible {
-            border: 2px solid $color-primary;
-            outline: 2px solid $color-primary;
+        &:not(&--selected) {
+            &:focus-visible {
+                border: 2px solid $color-primary;
+                outline: 2px solid $color-primary;
+            }
+
+            &:hover {
+                background: transparentize($color-secondary, 0.7);
+            }
         }
 
         @include respond-above('medium') {
