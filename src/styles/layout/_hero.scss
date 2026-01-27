@@ -6,11 +6,8 @@
     text-align: center;
 
     &__container {
-        display: flex;
-        flex-direction: column;
+        @include flexbox(column, flex-start, center, px-to-rem(24));
         width: 100%;
-        align-items: center;
-        gap: px-to-rem(24);
 
         padding-block: px-to-rem(32);
 
@@ -20,11 +17,8 @@
     }
 
     &__typography {
-        display: flex;
-        flex-direction: column;
+        @include flexbox(column, flex-start, center, px-to-rem(8));
         width: 100%;
-        align-items: center;
-        gap: px-to-rem(8);
 
         @include respond-above('medium') {
             gap: px-to-rem(2);
