@@ -21,7 +21,6 @@
     }
 
     &__label {
-        font-family: $font-family-text;
         @include text-size('lg');
         display: none;
 

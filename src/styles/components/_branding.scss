@@ -1,10 +1,7 @@
 @use '../abstracts' as *;
 
 .branding {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: px-to-rem(12);
+    @include flexbox(row, center, center, px-to-rem(12));
 
     @include respond-above('medium') {
         padding-left: px-to-rem(16);
@@ -19,7 +16,7 @@
         display: none;
 
         @include respond-above('medium') {
-            display: flex;
+            display: block;
         }
     }
 }

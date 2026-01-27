@@ -3,6 +3,26 @@ const DROPDOWN_TRIGGER_CLASS = 'dropdown__trigger';
 const DROPDOWN_TRIGGER_ACTIVE_CLASS = 'dropdown__trigger--active';
 const DROPDOWN_MENU_CLASS = 'dropdown__menu';
 const DROPDOWN_MENU_OPEN_CLASS = 'dropdown__menu--open';
+const DROPDOWN_CLASS = 'dropdown';
+
+/**
+ * Limit the number of times a function gets executed
+ * @param {function} func - Function to debounce
+ * @param {number} timeout - interval for debounce
+ * @returns {function} - debounced version of the function
+ */
+function debounce(func, timeout = 300) {
+    let timer;
+    return (...args) => {
+        if (!timer) {
+            func.apply(this, args);
+        }
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            timer = undefined;
+        }, timeout);
+    };
+}
 
 /**
  * Stores the currently open dropdown menu.
@@ -17,16 +37,10 @@ let activeDropdown = null;
 let activeTrigger = null;
 
 /**
- * Toggles a dropdown menu between it's open & closed states
- * @param {MouseEvent} event - The click event object
- * @this {HTMLElement} - The trigger button element
+ * Toggle dropdown
+ * @param {HTMLElement} trigger - The trigger button element
  */
-const toggleDropdown = (event) => {
-    event.stopPropagation();
-
-    /** @type {HTMLElement} */
-    const trigger = event.target;
-
+const toggleDropdown = (trigger) => {
     /** @type {HTMLElement} */
     let menu = trigger.nextSibling;
 
@@ -42,7 +56,7 @@ const toggleDropdown = (event) => {
     // Close any existing dropdowns
     const isOpen = menu.classList.contains(DROPDOWN_MENU_OPEN_CLASS);
 
-    // If clicking the same dropdown that's open, just close it
+    // If opening the same dropdown that's open, just close it
     if (isOpen) {
         closeDropdown();
         return;
@@ -60,6 +74,9 @@ const toggleDropdown = (event) => {
     activeTrigger = trigger;
 };
 
+/** @type {(trigger: HTMLElement) => void} */
+const debounceToggleDropdown = debounce(toggleDropdown, 100);
+
 /**
  * Closes the currently open dropdown (if any).
  */
@@ -68,7 +85,7 @@ const closeDropdown = () => {
 
     activeDropdown.classList.remove(DROPDOWN_MENU_OPEN_CLASS);
     activeTrigger.classList.remove(DROPDOWN_TRIGGER_ACTIVE_CLASS);
-    activeTrigger.setAttribute('aria-expended', false);
+    activeTrigger.setAttribute('aria-expanded', false);
 
     activeDropdown = null;
     activeTrigger = null;
@@ -81,29 +98,20 @@ const initDropdowns = () => {
     document
         .querySelectorAll(`.${DROPDOWN_TRIGGER_CLASS}`)
         .forEach((trigger) => {
-            trigger.addEventListener('click', toggleDropdown);
+            trigger.addEventListener('click', (event) =>
+                debounceToggleDropdown(event.target),
+            );
         });
+    document.querySelectorAll(`.${DROPDOWN_CLASS}`).forEach((menu) => {
+        menu.addEventListener('mouseenter', (event) => {
+            debounceToggleDropdown(
+                event.target.querySelector(`.${DROPDOWN_TRIGGER_CLASS}`),
+            );
+        });
+    });
+    document.querySelectorAll(`.${DROPDOWN_CLASS}`).forEach((menu) => {
+        menu.addEventListener('mouseleave', closeDropdown);
+    });
 };
 
-/**
- * Global click handler to close dropdown when clicking outside
- * @param {MouseEvent} event
- */
-const handleOutsideClick = (event) => {
-    if (!activeDropdown) return;
-
-    // Check if click happened inside any open dropdown or its trigger
-    const clickedInside =
-        activeDropdown.contains(/** @type {Node} */ (event.target)) ||
-        activeTrigger?.contains(/** @type {Node} */ (event.target));
-
-    if (!clickedInside) {
-        closeDropdown();
-    }
-};
-
-// ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', initDropdowns);
-
-// Use capture phase? Usually not needed for this case — bubbling is fine
-window.addEventListener('click', handleOutsideClick);
