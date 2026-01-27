@@ -4,8 +4,6 @@
     position: relative;
 
     &__trigger {
-        font-family: $font-family-text;
-
         &--active {
             background: $color-secondary-gradient;
             color: $color-bg;
@@ -41,7 +39,7 @@
     }
 
     &__item {
-        display: flex;
+        @include flexbox;
     }
 
     &__link {
