@@ -16,12 +16,12 @@
 
     &__title {
         @include text-size('sm');
-        $color: $color-separator;
+        color: $color-separator;
         margin-bottom: px-to-rem(9);
     }
 
     &__label {
-        $color: $color-footer;
+        color: $color-footer;
         @include text-size('sm');
     }
 }
