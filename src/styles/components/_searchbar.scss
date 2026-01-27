@@ -16,7 +16,7 @@
         color: $color-bg;
     }
 
-    &:focus {
+    &:focus-visible {
         &::placeholder {
             color: transparentize($color-bg, $amount: 0.6);
         }

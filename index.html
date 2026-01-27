@@ -113,16 +113,14 @@
         <header class="header">
             <nav class="navbar">
                 <div class="navbar__brand">
-                    <a href="#" class="branding">
+                    <a href="/" class="branding">
                         <img
                             alt="Alura Books logo"
                             class="branding__logo"
-                            loading="lazy"
                             src="/assets/images/logo.svg"
                         />
                         <img
                             class="branding__textmark"
-                            loading="lazy"
                             src="/assets/images/textmark.svg"
                             alt="Alura Books"
                         />
@@ -141,43 +139,43 @@
                             <ul class="dropdown__menu">
                                 <li class="dropdown__group">Categorias</li>
                                 <li class="dropdown__item">
-                                    <a href="#" class="dropdown__link"
+                                    <a href="/" class="dropdown__link"
                                         >Programacao</a
                                     >
                                 </li>
                                 <li class="dropdown__item">
-                                    <a href="#" class="dropdown__link"
+                                    <a href="/" class="dropdown__link"
                                         >Front-end</a
                                     >
                                 </li>
                                 <li class="dropdown__item">
-                                    <a href="#" class="dropdown__link"
+                                    <a href="/" class="dropdown__link"
                                         >Infraestrutura</a
                                     >
                                 </li>
                                 <li class="dropdown__item">
-                                    <a href="#" class="dropdown__link"
+                                    <a href="/" class="dropdown__link"
                                         >Business</a
                                     >
                                 </li>
                                 <li class="dropdown__item">
-                                    <a href="#" class="dropdown__link"
+                                    <a href="/" class="dropdown__link"
                                         >Design & UX</a
                                     >
                                 </li>
                             </ul>
                         </li>
                         <li class="navbar__item">
-                            <a href="#" class="navbar__link">Favoritos</a>
+                            <a href="/" class="navbar__link">Favoritos</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="#" class="navbar__link">Minha Estante</a>
+                            <a href="/" class="navbar__link">Minha Estante</a>
                         </li>
                     </ul>
                 </div>
                 <div class="navbar__user">
                     <a
-                        href="#"
+                        href="/"
                         class="navbar__button button-icon button-icon--mobile-only"
                         aria-label="Favoritos"
                     >
@@ -185,19 +183,25 @@
                         <span class="button-icon__label">Favoritos</span>
                     </a>
                     <a
-                        href="#"
+                        href="/"
                         class="navbar__button button-icon"
                         aria-label="Minha sacola"
                     >
-                        <span class="button-icon__icon icon-bag"></span>
+                        <span
+                            class="button-icon__icon icon-bag"
+                            aria-hidden="true"
+                        ></span>
                         <span class="button-icon__label">Minha sacola</span>
                     </a>
                     <a
-                        href="#"
+                        href="/"
                         class="navbar__button button-icon"
                         aria-label="Meu Perfil"
                     >
-                        <span class="button-icon__icon icon-user"></span>
+                        <span
+                            class="button-icon__icon icon-user"
+                            aria-hidden="true"
+                        ></span>
                         <span class="button-icon__label">Meu perfil</span>
                     </a>
                 </div>
@@ -207,7 +211,7 @@
         <main>
             <section class="hero">
                 <div class="container hero__container">
-                    <div class="hero__typography">
+                    <div class="hero__heading">
                         <h2 class="hero__title heading">
                             Já sabe por onde começar?
                         </h2>
@@ -236,7 +240,6 @@
                                 <div class="slider__slide">
                                     <img
                                         alt="Javascript Assertivo"
-                                        loading="lazy"
                                         class="slider__image"
                                         src="/assets/images/slider/book3.webp"
                                     />
@@ -244,7 +247,6 @@
                                 <div class="slider__slide">
                                     <img
                                         alt="Lideramca em design"
-                                        loading="lazy"
                                         class="slider__image"
                                         src="/assets/images/slider/book1.webp"
                                     />
@@ -252,7 +254,6 @@
                                 <div class="slider__slide">
                                     <img
                                         alt="Apache kafka spring boot"
-                                        loading="lazy"
                                         class="slider__image"
                                         src="/assets/images/slider/book2.webp"
                                     />
@@ -260,7 +261,6 @@
                                 <div class="slider__slide">
                                     <img
                                         alt="Javascript Assertivo"
-                                        loading="lazy"
                                         class="slider__image"
                                         src="/assets/images/slider/book3.webp"
                                     />
@@ -397,6 +397,7 @@
                                 <img
                                     class="card__thumbnail"
                                     alt="Julaiana Agnarikov"
+                                    loading="lazy"
                                     src="/assets/images/card/woman.webp"
                                 />
                             </div>

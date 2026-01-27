@@ -18,7 +18,7 @@
         }
     }
     &__container {
-        display: flex;
+        @include flexbox;
         touch-action: pan-y pinch-zoom;
     }
 
@@ -63,7 +63,7 @@
             display: flex;
         }
 
-        &:focus {
+        &:focus-visible {
             border: 2px solid $color-primary;
             outline: 2px solid $color-primary;
         }
@@ -103,7 +103,7 @@
             background: $color-secondary-gradient;
         }
 
-        &:focus {
+        &:focus-visible {
             border: 2px solid $color-primary;
             outline: 2px solid $color-primary;
         }
