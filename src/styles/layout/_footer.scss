@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+.footer {
+    border-top: 1px solid $color-separator;
+    padding: px-to-rem(24);
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include respond-above('medium') {
+        padding-top: px-to-rem(52);
+        grid-template-columns: repeat(4, 1fr);
+        gap: px-to-rem(24);
+    }
+
+    @include respond-above('large') {
+        padding-top: px-to-rem(48);
+        padding-inline: px-to-rem(92);
+    }
+
+    &__heading {
+        @include respond-above('medium') {
+            margin-right: px-to-rem(16);
+            @include text-size('xl');
+        }
+
+        @include respond-above('large') {
+            margin-inline: auto;
+        }
+    }
+
+    &__list.list {
+        display: none;
+
+        @include respond-above('medium') {
+            display: flex;
+        }
+
+        @include respond-above('large') {
+            border-left: 1px solid $color-separator;
+            padding-inline: px-to-rem(20);
+        }
+    }
+}

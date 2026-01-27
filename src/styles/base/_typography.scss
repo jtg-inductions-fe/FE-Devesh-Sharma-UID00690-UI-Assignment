@@ -15,6 +15,10 @@
     &--medium {
         @include text-weight('medium');
     }
+
+    &--regular {
+        @include text-weight('regular');
+    }
 }
 
 .body {
