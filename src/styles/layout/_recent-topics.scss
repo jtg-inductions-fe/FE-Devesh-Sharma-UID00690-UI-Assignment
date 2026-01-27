@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+.recent-topics {
+    background: $color-secondary-gradient;
+    color: $color-bg;
+
+    @include flexbox(column, center, center, px-to-rem(32));
+    padding: px-to-rem(24) px-to-rem(16);
+
+    @include respond-above('medium') {
+        gap: px-to-rem(40);
+        padding-block: px-to-rem(32);
+    }
+
+    @include respond-above('large') {
+        gap: px-to-rem(40);
+        padding-top: px-to-rem(64);
+        padding-bottom: px-to-rem(74);
+    }
+
+    &__title {
+        @include respond-above('medium') {
+            @include text-size('xl');
+        }
+        @include respond-above('large') {
+            @include text-size('3xl');
+        }
+    }
+
+    &__buttons {
+        @include flexbox(row, center, center, px-to-rem(16));
+        flex-wrap: wrap;
+        width: 100%;
+
+        @include respond-above('medium') {
+            gap: px-to-rem(24);
+            max-width: px-to-rem(750);
+        }
+    }
+
+    .button {
+        padding: px-to-rem(16) px-to-rem(24);
+        @include text-size('sm');
+
+        @include respond-above('medium') {
+            padding: px-to-rem(24) px-to-rem(32);
+            @include text-size('xl');
+        }
+    }
+}
