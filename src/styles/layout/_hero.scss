@@ -16,7 +16,7 @@
         }
     }
 
-    &__typography {
+    &__heading {
         @include flexbox(column, flex-start, center, px-to-rem(8));
         width: 100%;
 
