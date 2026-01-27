@@ -60,7 +60,7 @@
         height: fit-content;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             background: $color-secondary-gradient;
             color: $color-bg;
             cursor: pointer;
