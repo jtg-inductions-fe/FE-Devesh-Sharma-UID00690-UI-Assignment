@@ -10,6 +10,9 @@
     height: px-to-rem(44);
     max-width: px-to-rem(380);
     width: 100%;
+    transition:
+        border-radius 0.3s,
+        box-shadow 0.3s;
 
     @include text-size('sm');
 
@@ -21,6 +24,11 @@
         &::placeholder {
             color: transparentize($color-bg, $amount: 0.6);
         }
+    }
+
+    &:hover {
+        border-radius: px-to-rem(20);
+        box-shadow: 0 0 10px transparentize($color: #fff, $amount: 0.8);
     }
 
     &--search {
@@ -57,6 +65,11 @@
 
         @include respond-above('large') {
             max-width: px-to-rem(349);
+        }
+
+        &:hover {
+            box-shadow: 0 0 10px
+                transparentize($color: $color-secondary, $amount: 0.8);
         }
     }
 }
