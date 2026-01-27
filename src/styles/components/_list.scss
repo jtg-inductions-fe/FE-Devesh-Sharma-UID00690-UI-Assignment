@@ -5,6 +5,16 @@
 
     &__item {
         @include flexbox(row, flex-start, center, px-to-rem(8));
+        cursor: pointer;
+
+        &:hover {
+            .list__logo {
+                filter: grayscale(0%);
+            }
+            .list__label {
+                text-decoration: underline;
+            }
+        }
     }
 
     &__logo {
