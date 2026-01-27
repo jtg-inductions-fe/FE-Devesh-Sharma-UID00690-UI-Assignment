@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-.searchbar {
+.input {
     border: 1px solid $color-bg;
     border-radius: px-to-rem(24);
     text-align: center;
