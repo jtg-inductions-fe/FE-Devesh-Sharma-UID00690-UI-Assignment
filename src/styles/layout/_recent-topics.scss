@@ -4,18 +4,20 @@
     background: $color-secondary-gradient;
     color: $color-bg;
 
-    @include flexbox(column, center, center, px-to-rem(32));
-    padding: px-to-rem(24) px-to-rem(16);
+    &__container {
+        @include flexbox(column, center, center, px-to-rem(32));
+        padding: px-to-rem(24) px-to-rem(16);
 
-    @include respond-above('medium') {
-        gap: px-to-rem(40);
-        padding-block: px-to-rem(32);
-    }
+        @include respond-above('medium') {
+            gap: px-to-rem(40);
+            padding-block: px-to-rem(32);
+        }
 
-    @include respond-above('large') {
-        gap: px-to-rem(40);
-        padding-top: px-to-rem(64);
-        padding-bottom: px-to-rem(74);
+        @include respond-above('large') {
+            gap: px-to-rem(40);
+            padding-top: px-to-rem(64);
+            padding-bottom: px-to-rem(74);
+        }
     }
 
     &__title {
