@@ -11,6 +11,16 @@
         @include respond-above('medium') {
             padding-top: px-to-rem(32);
         }
+
+        .container {
+            @include respond-above('medium') {
+                padding-bottom: px-to-rem(48);
+            }
+
+            @include respond-above('large') {
+                padding-bottom: px-to-rem(72);
+            }
+        }
     }
 
     &__title {
