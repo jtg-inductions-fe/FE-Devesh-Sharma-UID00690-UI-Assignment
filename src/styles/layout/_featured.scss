@@ -3,12 +3,14 @@
 .featured {
     padding-top: px-to-rem(12);
 
-    @include respond-above('medium') {
-        padding-bottom: px-to-rem(26);
-    }
-
     @include respond-above('large') {
         padding-top: px-to-rem(0);
+    }
+
+    &--authors {
+        @include respond-above('medium') {
+            padding-top: px-to-rem(32);
+        }
     }
 
     &__title {
