@@ -1,87 +1,42 @@
-html,
-body,
-div,
-span,
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+    // Remove Margins
+    margin: 0;
+    padding: 0;
+    // Reset Borders
+    border: none;
+}
+
+// Remove Heading Styles
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-p,
-a,
-img,
-small,
-strong,
-sub,
-sup,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+// Reset list styling
 ol,
 ul,
-li,
-label,
-article,
-footer,
-header,
-menu,
-nav,
-section {
-    margin: 0;
-    padding: 0;
-    font: inherit;
-    vertical-align: baseline;
-    border: none;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1.5;
-}
-
-ol,
-ul {
+menu {
     list-style: none;
 }
 
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
+// Remove link styles
 a {
     color: unset;
     text-decoration: none;
 }
 
+// Reset input elements
 button,
-input,
-optgroup,
-select,
-textarea {
+input {
     padding: 0;
     border: none;
     outline: none;

@@ -2,5 +2,6 @@
 
 .container {
     margin-inline: auto;
-    max-width: px-to-rem(1728);
+    max-width: map-get($breakpoints, 'large');
+    padding-inline: px-to-rem(16);
 }
