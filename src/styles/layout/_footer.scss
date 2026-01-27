@@ -2,19 +2,21 @@
 
 .footer {
     border-top: 1px solid $color-separator;
-    padding: px-to-rem(24);
-    display: grid;
-    grid-template-columns: 1fr;
+    &__container {
+        padding: px-to-rem(24);
+        display: grid;
+        grid-template-columns: 1fr;
 
-    @include respond-above('medium') {
-        padding-top: px-to-rem(52);
-        grid-template-columns: repeat(4, 1fr);
-        gap: px-to-rem(24);
-    }
+        @include respond-above('medium') {
+            padding-top: px-to-rem(52);
+            grid-template-columns: repeat(4, 1fr);
+            gap: px-to-rem(24);
+        }
 
-    @include respond-above('large') {
-        padding-top: px-to-rem(48);
-        padding-inline: px-to-rem(92);
+        @include respond-above('large') {
+            padding-top: px-to-rem(48);
+            padding-inline: px-to-rem(92);
+        }
     }
 
     &__heading {
