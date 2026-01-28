@@ -6,23 +6,15 @@ const DROPDOWN_MENU_OPEN_CLASS = 'dropdown__menu--open';
 const DROPDOWN_CLASS = 'dropdown';
 
 /**
- * Limit the number of times a function gets executed
- * @param {function} func - Function to debounce
- * @param {number} timeout - interval for debounce
- * @returns {function} - debounced version of the function
+ * Detemines if the current device is touch using touch event capability
+ * @returns {boolean} - weather the current client is a touch device
  */
-const debounce = (func, timeout = 300) => {
-    let timer;
-    return (...args) => {
-        if (!timer) {
-            func.apply(this, args);
-        }
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-            timer = undefined;
-        }, timeout);
-    };
-};
+function isTouchDevice() {
+    const isTouchScreen =
+        'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    return isTouchScreen;
+}
 
 /**
  * Stores the currently open dropdown menu.
@@ -74,9 +66,6 @@ const toggleDropdown = (trigger) => {
     activeTrigger = trigger;
 };
 
-/** @type {(trigger: HTMLElement) => void} */
-const debounceToggleDropdown = debounce(toggleDropdown, 100);
-
 /**
  * Closes the currently open dropdown (if any).
  */
@@ -95,20 +84,22 @@ const closeDropdown = () => {
  * Initializes all dropdown triggers after the DOM is fully loaded.
  */
 const initDropdowns = () => {
+    if (!isTouchDevice()) {
+        document.querySelectorAll(`.${DROPDOWN_CLASS}`).forEach((menu) => {
+            menu.addEventListener('mouseenter', (event) => {
+                toggleDropdown(
+                    event.target.querySelector(`.${DROPDOWN_TRIGGER_CLASS}`),
+                );
+            });
+        });
+    }
     document
         .querySelectorAll(`.${DROPDOWN_TRIGGER_CLASS}`)
         .forEach((trigger) => {
             trigger.addEventListener('click', (event) =>
-                debounceToggleDropdown(event.target),
+                toggleDropdown(event.target),
             );
         });
-    document.querySelectorAll(`.${DROPDOWN_CLASS}`).forEach((menu) => {
-        menu.addEventListener('mouseenter', (event) => {
-            debounceToggleDropdown(
-                event.target.querySelector(`.${DROPDOWN_TRIGGER_CLASS}`),
-            );
-        });
-    });
     document.querySelectorAll(`.${DROPDOWN_CLASS}`).forEach((menu) => {
         menu.addEventListener('mouseleave', closeDropdown);
     });
