@@ -15,7 +15,6 @@
     }
 
     @include respond-above('large') {
-        max-width: px-to-rem(588);
         padding-bottom: px-to-rem(24);
     }
 
@@ -72,10 +71,6 @@
         .button-icon {
             outline-offset: 4px;
         }
-
-        @include respond-above('medium') {
-            font-size: px-to-rem(24);
-        }
     }
 
     &__thumbnail {
@@ -109,7 +104,6 @@
 
         @include respond-above('large') {
             padding-block: px-to-rem(8);
-            padding-left: px-to-rem(0);
         }
     }
 
