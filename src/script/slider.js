@@ -22,10 +22,7 @@ const initializeSlider = (wrapperNode) => {
     const emblaApi = EmblaCarousel(
         viewportNode,
         { loop: true, align: 'center' },
-        [
-            Autoplay({ delay: 5000, defaultInteraction: false }),
-            Accessibility({}),
-        ],
+        [Autoplay({ delay: 5000 }), Accessibility({})],
     );
     emblaApi.plugins().autoplay?.play();
     emblaApi.plugins().accessibility?.setupDotButtons(dotsNode);

@@ -9,12 +9,12 @@ const DROPDOWN_CLASS = 'dropdown';
  * Detemines if the current device is touch using touch event capability
  * @returns {boolean} - weather the current client is a touch device
  */
-function isTouchDevice() {
+const isTouchDevice = () => {
     const isTouchScreen =
         'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     return isTouchScreen;
-}
+};
 
 /**
  * Stores the currently open dropdown menu.
@@ -93,6 +93,7 @@ const initDropdowns = () => {
             });
         });
     }
+
     document
         .querySelectorAll(`.${DROPDOWN_TRIGGER_CLASS}`)
         .forEach((trigger) => {
