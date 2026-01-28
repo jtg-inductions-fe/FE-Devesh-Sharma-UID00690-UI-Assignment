@@ -8,18 +8,22 @@
     max-width: px-to-rem(588);
     width: 100%;
 
+    @include flexbox(column, flex-start, stretch, px-to-rem(8));
+
     @include respond-above('medium') {
         max-width: px-to-rem(588);
         padding-top: px-to-rem(24);
         padding-right: px-to-rem(24);
+        gap: px-to-rem(24);
     }
 
     @include respond-above('large') {
         padding-bottom: px-to-rem(24);
+        gap: px-to-rem(8);
     }
 
     &__main {
-        @include flexbox(row, space-between, flex-start, px-to-rem(18));
+        @include flexbox(row, space-between, flex-start, px-to-rem(24));
     }
 
     &__content {
@@ -46,14 +50,11 @@
 
     &__title {
         color: $color-secondary;
+        @include clamp-lines(2);
     }
 
     &__body {
-        max-width: px-to-rem(148);
-
-        @include respond-above('medium') {
-            max-width: px-to-rem(335);
-        }
+        @include clamp-lines(8);
     }
 
     &__actions {
@@ -75,7 +76,7 @@
     }
 
     &__thumbnail {
-        width: px-to-rem(162);
+        max-width: px-to-rem(162);
         height: px-to-rem(168);
         object-fit: cover;
 
@@ -95,22 +96,10 @@
 
     &__footer {
         @include flexbox(row, space-between, center);
-        padding-block: px-to-rem(8);
         padding-left: px-to-rem(12);
 
         @include respond-above('medium') {
-            padding-block: px-to-rem(24) px-to-rem(4);
             padding-left: px-to-rem(0);
         }
-
-        @include respond-above('large') {
-            padding-block: px-to-rem(8);
-        }
-    }
-}
-
-.author-card {
-    .card__footer {
-        padding-top: px-to-rem(24);
     }
 }

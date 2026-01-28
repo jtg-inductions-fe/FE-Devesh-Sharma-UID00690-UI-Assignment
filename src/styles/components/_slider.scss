@@ -4,6 +4,14 @@
     position: relative;
     max-width: 100%;
 
+    @include respond-above('medium') {
+        max-width: px-to-rem(745);
+    }
+
+    @include respond-above('large') {
+        max-width: px-to-rem(745);
+    }
+
     &__viewport {
         padding-block: px-to-rem(12);
         overflow: visible;
@@ -20,55 +28,51 @@
     &__container {
         @include flexbox;
         touch-action: pan-y pinch-zoom;
-        margin-left: -px-to-rem(20);
+        gap: px-to-rem(20);
 
         @include respond-above('medium') {
-            margin-left: 0;
+            gap: px-to-rem(75);
         }
     }
 
     &__slide {
-        flex: 0 0 50%;
-        min-width: 0;
-        padding-left: px-to-rem(20);
+        flex: 0 0 auto;
         @include flexbox(row, center, center, 0);
+        width: px-to-rem(180);
+        height: px-to-rem(250);
 
         @include respond-above('medium') {
-            flex: 0 0 35%;
-            padding-left: 0;
+            min-width: px-to-rem(190);
+            min-height: px-to-rem(265);
+        }
+
+        &:last-child {
+            margin-right: px-to-rem(20);
+
+            @include respond-above('medium') {
+                margin-right: px-to-rem(75);
+            }
         }
     }
 
     &__image {
         object-fit: contain;
         width: 100%;
-        max-height: px-to-rem(400);
-
-        @include respond-above('medium') {
-            width: px-to-rem(192);
-        }
-
-        @include respond-above('large') {
-            width: px-to-rem(180);
-        }
     }
 
     &__button {
         width: px-to-rem(48);
         height: px-to-rem(48);
-
         background: $color-secondary-gradient;
         border-radius: 50%;
-
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-
-        display: none;
         transition:
             transform 0.5s,
             box-shadow 0.5s;
         @include flexbox(row, center, center, 0);
+        display: none;
 
         @include respond-above('medium') {
             display: flex;
