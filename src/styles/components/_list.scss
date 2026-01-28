@@ -31,7 +31,7 @@
     }
 
     &__label {
-        color: $color-footer;
+        color: $color-text-footer;
         @include text-size('sm');
     }
 }
