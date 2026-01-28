@@ -1,3 +1,5 @@
+@use 'colors' as *;
+
 /// Path to font files
 $font-path: '/assets/fonts';
 
@@ -6,6 +8,23 @@ $base-font-size: 16;
 
 // Used font families
 $font-family-text: 'Poppins', system-ui, sans-serif;
+
+// Shadow Styles
+$shadow-card: 0 4px 4px
+    transparentize(
+        $color: $color-text,
+        $amount: 0.75,
+    );
+$shadow-glow: 0 0 14px
+    transparentize(
+        $color: $color-bg,
+        $amount: 0.5,
+    );
+$shadow-drop: 0 5px 10px
+    transparentize(
+        $color: $color-text,
+        $amount: 0.6,
+    );
 
 /// Map of font sizes for the application.
 $font-sizes: (

@@ -28,7 +28,7 @@
 
     &:hover {
         border-radius: px-to-rem(20);
-        box-shadow: 0 0 10px transparentize($color: #fff, $amount: 0.8);
+        box-shadow: $shadow-glow;
     }
 
     @include respond-above('medium') {
