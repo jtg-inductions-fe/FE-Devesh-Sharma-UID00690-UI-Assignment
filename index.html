@@ -1,13 +1,93 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Alura Books</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Alura Books" />
+        <meta
+            name="description"
+            content="Alura Books - Discover a new world of books"
+        />
+        <meta
+            property="og:description"
+            content="Alura Books - Discover a new world of books"
+        />
+        <meta name="author" content="JTG" />
         <link rel="stylesheet" href="src/styles/main.scss" />
+
+        <!-- Favicons -->
+        <!-- Essential for all desktop browsers -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+
+        <!-- iPhone/iPad home screen icons -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon-180x180.png"
+        />
+
+        <!-- Android home screen icons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/favicon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="512x512"
+            href="/favicon-512x512.png"
+        />
+
+        <link
+            rel="preload"
+            href="/assets/fonts/icomoon/Icomoon.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+
+        <noscript>
+            <style>
+                header,
+                main,
+                footer {
+                    display: none;
+                }
+                .noscript-message {
+                    text-align: center;
+                    padding: 50px;
+                    font-family: sans-serif;
+                }
+            </style>
+        </noscript>
     </head>
     <body>
-        <div>Hello World</div>
+        <main>
+            <h1>Alura Books</h1>
+        </main>
+
+        <noscript>
+            <div class="noscript-message">
+                <h1>JavaScript Disabled</h1>
+                <p>Please enable JavaScript to view this website.</p>
+            </div>
+        </noscript>
+
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

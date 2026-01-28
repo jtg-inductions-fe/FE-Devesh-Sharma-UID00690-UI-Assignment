@@ -1,0 +1,92 @@
+@use 'functions' as *;
+@use 'variables' as *;
+
+/// Generates a min-width media query from the defined breakpoints.
+/// @param {String} $breakpoint - The key from the $breakpoints map (e.g., 'medium').
+/// @requires $breakpoints
+/// @example scss - Usage
+///   .element {
+///     @include respond-above('medium') {
+///       display: flex;
+///     }
+///   }
+@mixin respond-above($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+
+        @media (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}` in $breakpoints map.';
+    }
+}
+
+/// Generates a max-width media query from the defined breakpoints.
+/// @param {String} $breakpoint - The key from the $breakpoints map (e.g., 'large').
+/// @requires $breakpoints
+/// @example scss - Usage
+///   .sidebar {
+///     @include respond-below('medium') {
+///       display: none;
+///     }
+///   }
+@mixin respond-below($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+
+        @media (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}` in $breakpoints map.';
+    }
+}
+
+/// Helper to quickly set font size according to a value from the $font-sizes map
+/// @param {String} $size - The key from the $font-sizes map (e.g., 'lg').
+/// @requires $font-sizes
+/// @example scss - Usage
+///   .title {
+///       @include text-size('4xl');
+///   }
+@mixin text-size($size) {
+    @if map-has-key($font-sizes, $size) {
+        font-size: px-to-rem(map-get($font-sizes, $size));
+    } @else {
+        @error "Unknown font-size: #{$size}.";
+    }
+}
+
+/// Helper to quickly set font weight according to a value from the $font-weights map
+/// @param {String} $weight - The key from the $font-weights map (e.g., 'bold').
+/// @requires $font-weights
+/// @example scss - Usage
+///   .title {
+///       @include text-weight('bold');
+///   }
+@mixin text-weight($weight) {
+    @if map-has-key($font-weights, $weight) {
+        font-weight: map-get($font-weights, $weight);
+    } @else {
+        @error "Unknown font-weight: #{$weight}.";
+    }
+}
+
+/// Flexbox utility mixin
+/// Defaults to: flex flex-row items-center justify-start gap-0
+/// @param {String} $direction - flexbox direction
+/// @param {String} $justify   - justify-content value
+/// @param {String} $align     - align-items value
+/// @param {Length} $gap       - gap between elements
+/// @example scss - Usage
+/// .stack {
+///    @include flexbox(column, center, flex-start, 10px);
+///  }
+@mixin flexbox($direction: row, $justify: flex-start, $align: center, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}

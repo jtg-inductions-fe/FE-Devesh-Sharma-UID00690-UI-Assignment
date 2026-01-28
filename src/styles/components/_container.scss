@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.container {
+    margin-inline: auto;
+    max-width: map-get($breakpoints, 'large');
+    padding-inline: px-to-rem(16);
+}

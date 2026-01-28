@@ -1,0 +1,46 @@
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+    // Remove Margins
+    margin: 0;
+    padding: 0;
+    // Reset Borders
+    border: none;
+}
+
+// Remove Heading Styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+// Reset list styling
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+// Remove link styles
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+// Reset input elements
+button,
+input {
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background: none;
+}
