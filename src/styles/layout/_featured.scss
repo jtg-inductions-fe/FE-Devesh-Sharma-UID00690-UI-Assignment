@@ -44,18 +44,3 @@
         }
     }
 }
-
-.authors {
-    padding-top: px-to-rem(32);
-
-    .container {
-        padding-bottom: px-to-rem(32);
-        @include respond-above('medium') {
-            padding-bottom: px-to-rem(48);
-        }
-
-        @include respond-above('large') {
-            padding-bottom: px-to-rem(72);
-        }
-    }
-}

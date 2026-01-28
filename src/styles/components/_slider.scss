@@ -37,7 +37,7 @@
 
     &__slide {
         flex: 0 0 auto;
-        @include flexbox(row, center, center, 0);
+        @include flexbox(row, center, center);
         width: px-to-rem(180);
         height: px-to-rem(250);
 
@@ -71,7 +71,7 @@
         transition:
             transform 0.5s,
             box-shadow 0.5s;
-        @include flexbox(row, center, center, 0);
+        @include flexbox(row, center, center);
         display: none;
 
         @include respond-above('medium') {
