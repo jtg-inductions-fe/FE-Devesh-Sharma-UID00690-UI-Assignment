@@ -69,7 +69,8 @@
         }
 
         .button-icon {
-            outline-offset: 4px;
+            border-radius: px-to-rem(8);
+            outline-offset: px-to-rem(4);
         }
     }
 
@@ -106,10 +107,10 @@
             padding-block: px-to-rem(8);
         }
     }
+}
 
-    &--author {
-        .card__footer {
-            padding-top: px-to-rem(24);
-        }
+.author-card {
+    .card__footer {
+        padding-top: px-to-rem(24);
     }
 }
