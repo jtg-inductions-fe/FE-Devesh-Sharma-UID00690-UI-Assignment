@@ -2,7 +2,7 @@
 
 .footer {
     border-top: 1px solid $color-separator;
-    &__container {
+    &__container.container {
         padding: px-to-rem(24);
         display: grid;
         grid-template-columns: 1fr;
