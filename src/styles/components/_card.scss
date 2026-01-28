@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .card {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: $shadow-card;
     padding: px-to-rem(16);
     border-radius: px-to-rem(10);
     background-color: $color-bg;
@@ -33,9 +33,15 @@
 
     &__subtitle {
         color: $color-primary;
+        @include clamp-lines(2);
+
+        @include respond-above('medium') {
+            @include clamp-lines(1);
+        }
 
         @include respond-above('large') {
             @include text-size('3xl');
+            @include clamp-lines(2);
         }
     }
 
@@ -92,7 +98,7 @@
     }
 
     &__footer {
-        @include flexbox(row, space-between, center, 0);
+        @include flexbox(row, space-between, center);
         padding-block: px-to-rem(8);
         padding-left: px-to-rem(12);
 

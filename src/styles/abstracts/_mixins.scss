@@ -90,3 +90,16 @@
     align-items: $align;
     gap: $gap;
 }
+
+/// Mixin to apply line-clamp
+/// @param {Number} $number   - number of lines to show
+/// @example scss - Usage
+/// .my-title {
+///    @include clamp-lines(1);
+///  }
+@mixin clamp-lines($number) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
