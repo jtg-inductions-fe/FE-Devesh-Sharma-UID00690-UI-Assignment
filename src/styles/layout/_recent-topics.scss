@@ -24,6 +24,7 @@
         @include respond-above('medium') {
             @include text-size('xl');
         }
+
         @include respond-above('large') {
             @include text-size('3xl');
         }
@@ -40,7 +41,7 @@
         }
     }
 
-    .button {
+    &__button.button {
         padding: px-to-rem(16) px-to-rem(24);
         @include text-size('sm');
 
