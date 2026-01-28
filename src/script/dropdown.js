@@ -11,7 +11,7 @@ const DROPDOWN_CLASS = 'dropdown';
  * @param {number} timeout - interval for debounce
  * @returns {function} - debounced version of the function
  */
-function debounce(func, timeout = 300) {
+const debounce = (func, timeout = 300) => {
     let timer;
     return (...args) => {
         if (!timer) {
@@ -22,7 +22,7 @@ function debounce(func, timeout = 300) {
             timer = undefined;
         }, timeout);
     };
-}
+};
 
 /**
  * Stores the currently open dropdown menu.
