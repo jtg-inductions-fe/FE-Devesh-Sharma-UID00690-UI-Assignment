@@ -8,7 +8,6 @@
     &__container {
         @include flexbox(column, flex-start, center, px-to-rem(24));
         width: 100%;
-
         padding-block: px-to-rem(32);
 
         @include respond-above('medium') {
@@ -37,7 +36,6 @@
     &__subtitle {
         @include text-size('base');
         @include text-weight('medium');
-
         max-width: px-to-rem(316);
 
         @include respond-above('medium') {
