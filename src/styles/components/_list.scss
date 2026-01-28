@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+.list {
+    @include flexbox(column, flex-start, flex-start, px-to-rem(16));
+
+    &__item {
+        @include flexbox(row, flex-start, center, px-to-rem(8));
+        cursor: pointer;
+
+        &:hover {
+            .list__logo {
+                filter: grayscale(0%);
+            }
+            .list__label {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__logo {
+        height: px-to-rem(35);
+        width: px-to-rem(35);
+        border-radius: 50%;
+        filter: grayscale(100%);
+    }
+
+    &__title {
+        @include text-size('sm');
+        color: $color-separator;
+        margin-bottom: px-to-rem(9);
+    }
+
+    &__label {
+        color: $color-text-footer;
+        @include text-size('sm');
+    }
+}
