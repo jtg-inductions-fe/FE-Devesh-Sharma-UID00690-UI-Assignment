@@ -106,10 +106,10 @@
             padding-block: px-to-rem(8);
         }
     }
+}
 
-    &--author {
-        .card__footer {
-            padding-top: px-to-rem(24);
-        }
+.author-card {
+    .card__footer {
+        padding-top: px-to-rem(24);
     }
 }
