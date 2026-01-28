@@ -69,7 +69,8 @@
         }
 
         .button-icon {
-            outline-offset: 4px;
+            border-radius: px-to-rem(8);
+            outline-offset: px-to-rem(4);
         }
     }
 
