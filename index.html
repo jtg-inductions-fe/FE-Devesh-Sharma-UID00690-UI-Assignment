@@ -76,7 +76,107 @@
             </style>
         </noscript>
     </head>
+
     <body>
+        <header class="header">
+            <nav class="navbar">
+                <div class="navbar__brand">
+                    <a href="/" class="branding">
+                        <img
+                            alt="Alura Books"
+                            class="branding__logo"
+                            src="/assets/images/logo.svg"
+                        />
+                        <img
+                            class="branding__textmark"
+                            src="/assets/images/textmark.svg"
+                            alt="Alura Books"
+                            aria-hidden="true"
+                        />
+                    </a>
+                    <ul class="navbar__list">
+                        <li class="navbar__item dropdown dropdown--navbar">
+                            <button
+                                class="navbar__link dropdown__trigger"
+                                aria-label="Open categories gmenu"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                            >
+                                <span class="icon-menu"></span>
+                                <span class="navbar__label">Categorias</span>
+                            </button>
+                            <dl class="dropdown__menu">
+                                <dt class="dropdown__group">Categorias</dt>
+                                <dd class="dropdown__item">
+                                    <a href="/" class="dropdown__link"
+                                        >Programacao</a
+                                    >
+                                </dd>
+                                <dd class="dropdown__item">
+                                    <a href="/" class="dropdown__link"
+                                        >Front-end</a
+                                    >
+                                </dd>
+                                <dd class="dropdown__item">
+                                    <a href="/" class="dropdown__link"
+                                        >Infraestrutura</a
+                                    >
+                                </dd>
+                                <dd class="dropdown__item">
+                                    <a href="/" class="dropdown__link"
+                                        >Business</a
+                                    >
+                                </dd>
+                                <dd class="dropdown__item">
+                                    <a href="/" class="dropdown__link"
+                                        >Design & UX</a
+                                    >
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="/" class="navbar__link">Favoritos</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="/" class="navbar__link">Minha Estante</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar__user">
+                    <a
+                        href="/"
+                        class="navbar__button button-icon button-icon--mobile-only"
+                        aria-label="Favoritos"
+                    >
+                        <span class="button-icon__icon icon-heart"></span>
+                        <span class="button-icon__label">Favoritos</span>
+                    </a>
+                    <a
+                        href="/"
+                        class="navbar__button button-icon"
+                        aria-label="Minha sacola"
+                    >
+                        <span
+                            class="button-icon__icon icon-bag"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="button-icon__label">Minha sacola</span>
+                    </a>
+                    <a
+                        href="/"
+                        class="navbar__button button-icon"
+                        aria-label="Meu Perfil"
+                    >
+                        <span
+                            class="button-icon__icon icon-user"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="button-icon__label">Meu perfil</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
         <main>
             <h1>Alura Books</h1>
         </main>

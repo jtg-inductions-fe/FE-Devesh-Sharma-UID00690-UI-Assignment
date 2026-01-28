@@ -1,0 +1,116 @@
+@use '../abstracts' as *;
+
+.navbar {
+    @include flexbox(row, space-between, center, 0);
+    width: 100%;
+    height: px-to-rem(80);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: map-get($z-index, 'navbar');
+    background-color: $color-bg;
+
+    @include respond-above('medium') {
+        padding: 0 px-to-rem(64);
+    }
+
+    &__brand,
+    &__user {
+        @include flexbox(row, flex-start, center, 0);
+    }
+
+    &__brand {
+        flex-direction: row-reverse;
+        gap: px-to-rem(16);
+
+        @include respond-above('medium') {
+            flex-direction: row;
+        }
+    }
+
+    &__user {
+        margin-right: px-to-rem(16);
+        gap: px-to-rem(2);
+
+        @include respond-above('medium') {
+            gap: px-to-rem(40);
+            margin-right: px-to-rem(0);
+        }
+
+        @include respond-above('large') {
+            gap: px-to-rem(28);
+        }
+    }
+
+    &__list {
+        @include flexbox(row, flex-start, center, px-to-rem(24));
+
+        @include respond-above('medium') {
+            margin-left: px-to-rem(40);
+        }
+    }
+
+    &__item {
+        display: none;
+
+        @include respond-above('medium') {
+            display: inline-flex;
+        }
+    }
+
+    &__link {
+        text-transform: uppercase;
+
+        padding: px-to-rem(14) px-to-rem(10);
+        height: fit-content;
+
+        &:hover,
+        &:focus-visible {
+            background: $color-secondary-gradient;
+            color: $color-bg;
+        }
+    }
+
+    &__button {
+        padding: px-to-rem(12) px-to-rem(14);
+    }
+
+    .dropdown--navbar {
+        display: block;
+
+        .dropdown__trigger {
+            height: 100%;
+        }
+
+        .dropdown__group {
+            @include respond-above('medium') {
+                display: none;
+            }
+        }
+
+        .icon-menu {
+            font-size: px-to-rem(24);
+            padding: px-to-rem(10);
+            height: 100%;
+            aspect-ratio: 1;
+            text-align: center;
+            display: grid;
+            place-items: center;
+            pointer-events: none;
+
+            @include respond-above('medium') {
+                display: none;
+            }
+        }
+
+        .navbar__label {
+            display: none;
+            pointer-events: none;
+
+            @include respond-above('medium') {
+                display: block;
+            }
+        }
+    }
+}
