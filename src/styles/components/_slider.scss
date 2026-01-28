@@ -29,9 +29,9 @@
 
     &__slide {
         flex: 0 0 50%;
-        @include flexbox(row, center, center, 0);
         min-width: 0;
         padding-left: px-to-rem(20);
+        @include flexbox(row, center, center, 0);
 
         @include respond-above('medium') {
             flex: 0 0 35%;
@@ -64,11 +64,11 @@
         top: 50%;
         transform: translateY(-50%);
 
-        @include flexbox(row, center, center, 0);
         display: none;
         transition:
             transform 0.5s,
             box-shadow 0.5s;
+        @include flexbox(row, center, center, 0);
 
         @include respond-above('medium') {
             display: flex;
@@ -81,7 +81,7 @@
 
         &:hover {
             transform: translateY(-60%);
-            box-shadow: 0 5px 10px transparentize($color: #000000, $amount: 0.6);
+            box-shadow: $shadow-drop;
         }
 
         .icon-chevron-left,
