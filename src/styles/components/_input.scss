@@ -4,7 +4,7 @@
     border: 1px solid $color-bg;
     border-radius: px-to-rem(24);
     text-align: center;
-    font-family: $font-family-text, icomoon;
+    font-family: $font-family-text, 'Icomoon';
 
     padding: px-to-rem(10) px-to-rem(24);
     height: px-to-rem(44);
@@ -28,7 +28,7 @@
 
     &:hover {
         border-radius: px-to-rem(20);
-        box-shadow: 0 0 10px transparentize($color: #fff, $amount: 0.8);
+        box-shadow: $shadow-glow;
     }
 
     &--search {

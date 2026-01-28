@@ -5,6 +5,9 @@
     width: 100%;
     height: px-to-rem(80);
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 50;
     background-color: $color-bg;
 
@@ -58,7 +61,6 @@
 
     &__link {
         text-transform: uppercase;
-
         padding: px-to-rem(14) px-to-rem(10);
         height: fit-content;
 
@@ -66,7 +68,6 @@
         &:focus-visible {
             background: $color-secondary-gradient;
             color: $color-bg;
-            cursor: pointer;
         }
     }
 
