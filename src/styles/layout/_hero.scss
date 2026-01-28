@@ -34,9 +34,10 @@
     }
 
     &__subtitle {
+        max-width: px-to-rem(316);
         @include text-size('base');
         @include text-weight('medium');
-        max-width: px-to-rem(316);
+        @include clamp-lines(4);
 
         @include respond-above('medium') {
             max-width: unset;

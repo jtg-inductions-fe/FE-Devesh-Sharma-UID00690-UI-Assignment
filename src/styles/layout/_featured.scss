@@ -10,10 +10,11 @@
     &__title {
         color: $color-primary;
         text-align: center;
-        padding-block: px-to-rem(8);
+        margin-block: px-to-rem(8);
+        @include clamp-lines(1);
 
         @include respond-above('medium') {
-            padding-block: px-to-rem(40) px-to-rem(16);
+            margin-block: px-to-rem(40) px-to-rem(16);
             @include text-size('2xl');
         }
 
@@ -22,7 +23,7 @@
         }
     }
 
-    &__container {
+    &__container.container {
         min-width: 100%;
         max-width: 100%;
         background-color: $color-bg-muted;
@@ -33,6 +34,7 @@
 
         @include respond-above('medium') {
             padding-block: px-to-rem(28);
+            padding-inline: px-to-rem(130);
         }
 
         @include respond-above('large') {
