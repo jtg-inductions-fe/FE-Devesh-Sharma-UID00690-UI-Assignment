@@ -8,11 +8,10 @@
     }
 
     &--authors {
-        @include respond-above('medium') {
-            padding-top: px-to-rem(32);
-        }
+        padding-top: px-to-rem(32);
 
         .container {
+            padding-bottom: px-to-rem(32);
             @include respond-above('medium') {
                 padding-bottom: px-to-rem(48);
             }

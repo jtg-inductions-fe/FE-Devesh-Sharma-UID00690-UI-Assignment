@@ -119,12 +119,12 @@
             background: $color-secondary-gradient;
         }
 
-        &:not(&--selected) {
-            &:focus-visible {
-                border: 2px solid $color-primary;
-                outline: 2px solid $color-primary;
-            }
+        &:focus-visible {
+            border: 2px solid $color-primary;
+            outline: 2px solid $color-primary;
+        }
 
+        &:not(&--selected) {
             &:hover {
                 background: transparentize($color-secondary, 0.7);
             }
