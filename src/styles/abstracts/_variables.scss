@@ -54,3 +54,8 @@ $breakpoints: (
     'medium': 1024px,
     'large': 1728px,
 );
+
+/// Map of z indexes
+$z-index: (
+    'navbar': 50,
+);
