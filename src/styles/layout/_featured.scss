@@ -7,21 +7,6 @@
         padding-top: px-to-rem(0);
     }
 
-    &--authors {
-        padding-top: px-to-rem(32);
-
-        .container {
-            padding-bottom: px-to-rem(32);
-            @include respond-above('medium') {
-                padding-bottom: px-to-rem(48);
-            }
-
-            @include respond-above('large') {
-                padding-bottom: px-to-rem(72);
-            }
-        }
-    }
-
     &__title {
         color: $color-primary;
         text-align: center;
@@ -54,6 +39,21 @@
             flex-direction: row;
             gap: px-to-rem(48);
             padding-block: px-to-rem(70) px-to-rem(80);
+        }
+    }
+}
+
+.authors {
+    padding-top: px-to-rem(32);
+
+    .container {
+        padding-bottom: px-to-rem(32);
+        @include respond-above('medium') {
+            padding-bottom: px-to-rem(48);
+        }
+
+        @include respond-above('large') {
+            padding-bottom: px-to-rem(72);
         }
     }
 }
