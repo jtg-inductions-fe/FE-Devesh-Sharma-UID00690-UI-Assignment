@@ -31,13 +31,44 @@
         box-shadow: $shadow-glow;
     }
 
-    @include respond-above('medium') {
-        @include text-size('base');
-        height: px-to-rem(56);
-        max-width: px-to-rem(476);
+    &--search {
+        @include respond-above('medium') {
+            @include text-size('base');
+            height: px-to-rem(56);
+            max-width: px-to-rem(476);
+        }
+
+        @include respond-above('large') {
+            max-width: px-to-rem(586);
+        }
     }
 
-    @include respond-above('large') {
-        max-width: px-to-rem(586);
+    &--email {
+        border-color: $color-secondary;
+        text-align: left;
+        @include text-size('base');
+
+        &::placeholder {
+            color: $color-secondary;
+        }
+
+        &:focus-visible {
+            &::placeholder {
+                color: transparentize($color-secondary, $amount: 0.6);
+            }
+        }
+
+        @include respond-above('medium') {
+            @include text-size('base');
+            max-width: px-to-rem(328);
+        }
+
+        @include respond-above('large') {
+            max-width: px-to-rem(349);
+        }
+
+        &:hover {
+            box-shadow: $shadow-glow-dark;
+        }
     }
 }

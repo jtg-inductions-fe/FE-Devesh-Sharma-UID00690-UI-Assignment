@@ -20,6 +20,11 @@ $shadow-glow: 0 0 14px
         $color: $color-bg,
         $amount: 0.5,
     );
+$shadow-glow-dark: 0 0 14px
+    transparentize(
+        $color: $color-text,
+        $amount: 0.5,
+    );
 $shadow-drop: 0 5px 10px
     transparentize(
         $color: $color-text,
