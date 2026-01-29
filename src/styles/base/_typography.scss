@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.heading {
+    @include text-size('md');
+    @include text-weight('bold');
+
+    &--small {
+        @include text-size('base');
+    }
+
+    &--light {
+        @include text-weight('light');
+    }
+
+    &--medium {
+        @include text-weight('medium');
+    }
+
+    &--regular {
+        @include text-weight('regular');
+    }
+}
+
+.paragraph {
+    @include text-size('base');
+    @include text-weight('regular');
+
+    &--light {
+        @include text-weight('light');
+    }
+
+    &--medium {
+        @include text-weight('medium');
+    }
+
+    &--small {
+        @include text-size('sm');
+    }
+
+    &--responsive {
+        @include text-size('sm');
+        @include respond-above('medium') {
+            @include text-size('base');
+        }
+    }
+}

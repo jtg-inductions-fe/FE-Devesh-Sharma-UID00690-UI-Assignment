@@ -1,0 +1,66 @@
+@use 'colors' as *;
+
+/// Path to font files
+$font-path: '/assets/fonts';
+
+/// Base font size in pixels
+$base-font-size: 16;
+
+// Used font families
+$font-family-text: 'Poppins', system-ui, sans-serif;
+
+// Shadow Styles
+$shadow-card: 0 4px 4px
+    transparentize(
+        $color: $color-text,
+        $amount: 0.75,
+    );
+$shadow-glow: 0 0 14px
+    transparentize(
+        $color: $color-bg,
+        $amount: 0.5,
+    );
+$shadow-glow-dark: 0 0 14px
+    transparentize(
+        $color: $color-text,
+        $amount: 0.5,
+    );
+$shadow-drop: 0 5px 10px
+    transparentize(
+        $color: $color-text,
+        $amount: 0.6,
+    );
+
+/// Map of font sizes for the application.
+$font-sizes: (
+    'sm': 14,
+    'base': 16,
+    'md': 18,
+    'lg': 20,
+    'xl': 24,
+    '2xl': 26,
+    '3xl': 32,
+    '4xl': 36,
+);
+
+/// Map of font weights for the application.
+$font-weights: (
+    'light': 300,
+    'regular': 400,
+    'medium': 500,
+    'bold': 700,
+);
+
+/// Map of breakpoints for the application.
+/// @type Map
+/// @prop {px} medium [1024px] - Breakpoint for tablets and small desktops.
+/// @prop {px} large [1728px] - Breakpoint for large desktop monitors.
+$breakpoints: (
+    'medium': 1024px,
+    'large': 1728px,
+);
+
+/// Map of z indexes
+$z-index: (
+    'navbar': 50,
+);

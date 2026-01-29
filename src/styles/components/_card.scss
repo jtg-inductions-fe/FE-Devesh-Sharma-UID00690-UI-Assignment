@@ -1,0 +1,105 @@
+@use '../abstracts' as *;
+
+.card {
+    box-shadow: $shadow-card;
+    padding: px-to-rem(16);
+    border-radius: px-to-rem(10);
+    background-color: $color-bg;
+    max-width: px-to-rem(588);
+    width: 100%;
+
+    @include flexbox(column, flex-start, stretch, px-to-rem(8));
+
+    @include respond-above('medium') {
+        max-width: px-to-rem(588);
+        padding-top: px-to-rem(24);
+        padding-right: px-to-rem(24);
+        gap: px-to-rem(24);
+    }
+
+    @include respond-above('large') {
+        padding-bottom: px-to-rem(24);
+        gap: px-to-rem(8);
+    }
+
+    &__main {
+        @include flexbox(row, space-between, flex-start, px-to-rem(24));
+    }
+
+    &__content {
+        @include flexbox(column, flex-start, flex-start, px-to-rem(8));
+    }
+
+    &__media {
+        @include flexbox(column, center, flex-end, px-to-rem(36));
+    }
+
+    &__subtitle {
+        color: $color-primary;
+        @include clamp-lines(2);
+
+        @include respond-above('medium') {
+            @include clamp-lines(1);
+        }
+
+        @include respond-above('large') {
+            @include text-size('3xl');
+            @include clamp-lines(2);
+        }
+    }
+
+    &__title {
+        color: $color-secondary;
+        @include clamp-lines(2);
+    }
+
+    &__body {
+        @include clamp-lines(8);
+    }
+
+    &__actions {
+        font-size: px-to-rem(24);
+        @include flexbox(row, center, flex-end, px-to-rem(20));
+
+        .icon {
+            width: px-to-rem(30);
+            height: px-to-rem(30);
+
+            display: grid;
+            place-items: center;
+        }
+
+        .button-icon {
+            border-radius: px-to-rem(8);
+            outline-offset: px-to-rem(4);
+        }
+    }
+
+    &__thumbnail {
+        max-width: px-to-rem(162);
+        height: px-to-rem(168);
+        object-fit: cover;
+
+        @include respond-above('medium') {
+            width: px-to-rem(146);
+            height: px-to-rem(151);
+        }
+    }
+
+    &__button {
+        width: px-to-rem(161);
+
+        @include respond-above('medium') {
+            width: px-to-rem(146);
+        }
+    }
+
+    &__footer {
+        @include flexbox(row, space-between, center);
+        padding-left: px-to-rem(12);
+
+        @include respond-above('medium') {
+            padding-left: px-to-rem(0);
+        }
+    }
+}

@@ -1,13 +1,716 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Alura Books</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Alura Books" />
+        <meta
+            name="description"
+            content="Alura Books - Discover a new world of books"
+        />
+        <meta
+            property="og:description"
+            content="Alura Books - Discover a new world of books"
+        />
+        <meta name="author" content="JTG" />
         <link rel="stylesheet" href="src/styles/main.scss" />
+
+        <!-- Favicons -->
+        <!-- Essential for all desktop browsers -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+
+        <!-- iPhone/iPad home screen icons -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon-180x180.png"
+        />
+
+        <!-- Android home screen icons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/favicon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="512x512"
+            href="/favicon-512x512.png"
+        />
+
+        <link
+            rel="preload"
+            href="/assets/fonts/icomoon/Icomoon.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="preload"
+            href="/assets/fonts/poppins/Poppins-Light.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="preload"
+            href="/assets/fonts/poppins/Poppins-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="preload"
+            href="/assets/fonts/poppins/Poppins-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+
+        <link
+            rel="preload"
+            href="/assets/fonts/poppins/Poppins-Medium.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
+
+        <noscript>
+            <style>
+                header,
+                main,
+                footer {
+                    display: none;
+                }
+                .noscript-message {
+                    text-align: center;
+                    padding: 50px;
+                    font-family: sans-serif;
+                }
+            </style>
+        </noscript>
     </head>
+
     <body>
-        <div>Hello World</div>
+        <header class="header">
+            <nav class="navbar">
+                <div class="navbar__brand">
+                    <a href="/" class="branding">
+                        <img
+                            alt="Alura Books"
+                            class="branding__logo"
+                            src="/assets/images/logo.svg"
+                        />
+                        <img
+                            class="branding__textmark"
+                            src="/assets/images/textmark.svg"
+                            alt="Alura Books"
+                            aria-hidden="true"
+                        />
+                    </a>
+                    <ul class="navbar__list">
+                        <li class="navbar__item dropdown dropdown--navbar">
+                            <button
+                                class="navbar__link dropdown__trigger"
+                                aria-label="Open categories gmenu"
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                            >
+                                <span class="icon-menu"></span>
+                                <span class="navbar__label">Categorias</span>
+                            </button>
+                            <dl class="dropdown__menu">
+                                <dt class="dropdown__group">Categorias</dt>
+                                <dd class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Programacao</a
+                                    >
+                                </dd>
+                                <dd class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Front-end</a
+                                    >
+                                </dd>
+                                <dd class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Infraestrutura</a
+                                    >
+                                </dd>
+                                <dd class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Business</a
+                                    >
+                                </dd>
+                                <dd class="dropdown__item">
+                                    <a href="#" class="dropdown__link"
+                                        >Design & UX</a
+                                    >
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#" class="navbar__link">Favoritos</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#" class="navbar__link">Minha Estante</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar__user">
+                    <a
+                        href="#"
+                        class="navbar__button button-icon button-icon--mobile-only"
+                        aria-label="Favoritos"
+                    >
+                        <span class="button-icon__icon icon-heart"></span>
+                        <span class="button-icon__label">Favoritos</span>
+                    </a>
+                    <a
+                        href="#"
+                        class="navbar__button button-icon"
+                        aria-label="Minha sacola"
+                    >
+                        <span
+                            class="button-icon__icon icon-bag"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="button-icon__label">Minha sacola</span>
+                    </a>
+                    <a
+                        href="#"
+                        class="navbar__button button-icon"
+                        aria-label="Meu Perfil"
+                    >
+                        <span
+                            class="button-icon__icon icon-user"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="button-icon__label">Meu perfil</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container hero__container">
+                    <div class="hero__heading">
+                        <h2 class="hero__title heading">
+                            Já sabe por onde começar?
+                        </h2>
+                        <p class="hero__subtitle">
+                            Encontre em nossa estante o que precisa para seu
+                            desenvolvimento!
+                        </p>
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="&#xF002;    Qual será sua próxima leitura?"
+                        name="search-query"
+                        id="searchbar"
+                        class="input input--search"
+                    />
+                </div>
+            </section>
+            <section class="featured books">
+                <div class="container">
+                    <h2 class="featured__title heading">ÚLTIMOS LANÇAMENTOS</h2>
+                </div>
+                <div class="featured__container container">
+                    <div class="slider">
+                        <div class="slider__dots"></div>
+
+                        <div class="slider__viewport">
+                            <div class="slider__container">
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Lideramca em design"
+                                        class="slider__image"
+                                        loading="lazy"
+                                        src="/assets/images/slider/book1.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Apache kafka spring boot"
+                                        class="slider__image"
+                                        loading="lazy"
+                                        src="/assets/images/slider/book2.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Javascript Assertivo"
+                                        class="slider__image"
+                                        loading="lazy"
+                                        src="/assets/images/slider/book3.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Lideramca em design"
+                                        class="slider__image"
+                                        loading="lazy"
+                                        src="/assets/images/slider/book1.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Apache kafka spring boot"
+                                        class="slider__image"
+                                        loading="lazy"
+                                        src="/assets/images/slider/book2.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Javascript Assertivo"
+                                        class="slider__image"
+                                        loading="lazy"
+                                        src="/assets/images/slider/book3.webp"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="slider__button slider__button--prev">
+                            <span class="icon-chevron-left"></span>
+                        </button>
+                        <button class="slider__button slider__button--next">
+                            <span class="icon-chevron-right"></span>
+                        </button>
+                    </div>
+                    <div class="card book-card">
+                        <div class="card__main">
+                            <div class="card__content">
+                                <h3
+                                    class="card__subtitle heading heading--small"
+                                >
+                                    Talvez você também se interesse por
+                                    portuguese Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit.
+                                </h3>
+                                <h2 class="card__title heading">
+                                    Angular 11 e Firebase
+                                </h2>
+                                <p
+                                    class="card__body paragraph paragraph--responsive"
+                                >
+                                    Construindo uma aplicação integrada com a
+                                    plataforma do Google.
+                                </p>
+                            </div>
+                            <div class="card__media">
+                                <img
+                                    class="card__thumbnail"
+                                    alt="Angular logo"
+                                    loading="lazy"
+                                    src="/assets/images/card/angular.webp"
+                                />
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__actions">
+                                <button
+                                    class="button-icon"
+                                    aria-label="Favorite"
+                                >
+                                    <span class="icon icon-heart"> </span>
+                                </button>
+                                <button
+                                    class="button-icon"
+                                    aria-label="Add to bag"
+                                >
+                                    <span class="icon icon-bag"> </span>
+                                </button>
+                            </div>
+                            <button class="card__button button">
+                                Saiba mais
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="featured authors">
+                <div class="container">
+                    <h2 class="featured__title heading">MAIS VENDIDOS</h2>
+                </div>
+                <div class="featured__container container">
+                    <div class="slider">
+                        <div class="slider__dots"></div>
+                        <div class="slider__viewport">
+                            <div class="slider__container">
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Lideramca em design"
+                                        class="slider__image"
+                                        loading="lazy"
+                                        src="/assets/images/slider/book1.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Apache kafka spring boot"
+                                        class="slider__image"
+                                        loading="lazy"
+                                        src="/assets/images/slider/book2.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Javascript Assertivo"
+                                        loading="lazy"
+                                        class="slider__image"
+                                        src="/assets/images/slider/book3.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Lideramca em design"
+                                        loading="lazy"
+                                        class="slider__image"
+                                        src="/assets/images/slider/book1.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Apache kafka spring boot"
+                                        loading="lazy"
+                                        class="slider__image"
+                                        src="/assets/images/slider/book2.webp"
+                                    />
+                                </div>
+                                <div class="slider__slide">
+                                    <img
+                                        alt="Javascript Assertivo"
+                                        loading="lazy"
+                                        class="slider__image"
+                                        src="/assets/images/slider/book3.webp"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="slider__button slider__button--prev">
+                            <span class="icon-chevron-left"></span>
+                        </button>
+                        <button class="slider__button slider__button--next">
+                            <span class="icon-chevron-right"></span>
+                        </button>
+                    </div>
+                    <div class="card author-card">
+                        <div class="card__main">
+                            <div class="card__content">
+                                <div class="rating">
+                                    <span class="rating__star icon-star"></span>
+                                    <span class="rating__star icon-star"></span>
+                                    <span class="rating__star icon-star"></span>
+                                    <span class="rating__star icon-star"></span>
+                                    <span class="rating__star icon-star"></span>
+                                </div>
+                                <h3
+                                    class="card__subtitle heading heading--small"
+                                >
+                                    Autora do Mês
+                                </h3>
+                                <h2 class="card__title heading">
+                                    Juliana Agarikov
+                                </h2>
+                                <p
+                                    class="card__body paragraph paragraph--responsive"
+                                >
+                                    Analista de sistemas e escritora, Juliana é
+                                    especialista em Front-End.
+                                </p>
+                            </div>
+                            <div class="card__media">
+                                <img
+                                    class="card__thumbnail"
+                                    alt="Julaiana Agnarikov"
+                                    loading="lazy"
+                                    src="/assets/images/card/woman.webp"
+                                />
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__actions">
+                                <button
+                                    class="button-icon"
+                                    aria-label="Favorite"
+                                >
+                                    <span class="icon icon-heart"> </span>
+                                </button>
+                                <button
+                                    class="button-icon"
+                                    aria-label="Add to bag"
+                                >
+                                    <span class="icon icon-bag"> </span>
+                                </button>
+                            </div>
+                            <button class="card__button button">
+                                Saiba mais
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-topics">
+                <div class="recent-topics__container container">
+                    <h2
+                        class="recent-topics__title heading--small heading--light"
+                    >
+                        TÓPICOS VISITADOS RECENTEMENTE
+                    </h2>
+                    <div class="recent-topics__buttons">
+                        <a href="#" class="recent-topics__button button"
+                            >Android</a
+                        >
+                        <a href="#" class="recent-topics__button button">OO</a>
+                        <a href="#" class="recent-topics__button button"
+                            >Marketing Digital</a
+                        >
+                        <a href="#" class="recent-topics__button button"
+                            >Agile</a
+                        >
+                        <a href="#" class="recent-topics__button button"
+                            >Startups</a
+                        >
+                        <a href="#" class="recent-topics__button button"
+                            >HTML & CSS</a
+                        >
+                        <a href="#" class="recent-topics__button button"
+                            >Java</a
+                        >
+                        <a href="#" class="recent-topics__button button"
+                            >Python</a
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact">
+                <div class="container contact__container">
+                    <div class="contact__text">
+                        <h3 class="contact__heading heading heading--medium">
+                            Fique por dentro das novidades!
+                        </h3>
+                        <p class="contact__body paragraph paragraph--light">
+                            Atualizações de e-books, novos livros, promoções e
+                            outros.
+                        </p>
+                    </div>
+
+                    <input
+                        class="contact__email input input--email"
+                        id="contact-email"
+                        name="email"
+                        placeholder="&#xF005;    Cadastre seu e-mail"
+                        type="email"
+                        autocomplete="email"
+                    />
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__container">
+                <h4 class="footer__heading heading--small heading--regular">
+                    Grupo Alura
+                </h4>
+                <dl class="footer__list list">
+                    <dt class="list__title">EDUCAÇÃO</dt>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/caelum.webp"
+                            loading="lazy"
+                            alt="Caelum"
+                        />
+                        <a href="#" class="list__label"> Caelum </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/casa-do-codigo.webp"
+                            loading="lazy"
+                            alt="Casa do Código"
+                        />
+                        <a href="#" class="list__label"> Casa do Código </a>
+                    </dd>
+                </dl>
+                <dl class="footer__list list">
+                    <dt class="list__title">EDUCAÇÃO ONLINE</dt>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/alura.webp"
+                            loading="lazy"
+                            alt="Alura"
+                        />
+                        <a href="#" class="list__label"> Alura </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/alura-para-empresas.webp"
+                            loading="lazy"
+                            alt="Alura Para Empresas"
+                        />
+                        <a href="#" class="list__label">
+                            Alura Para Empresas
+                        </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/alura.webp"
+                            loading="lazy"
+                            alt="Alura Latam"
+                        />
+                        <a href="#" class="list__label"> Alura Latam </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/alura-start.webp"
+                            loading="lazy"
+                            alt="Alura Start"
+                        />
+                        <a href="#" class="list__label"> Alura Start </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/musicdot.webp"
+                            loading="lazy"
+                            alt="MusicDot"
+                        />
+                        <a href="#" class="list__label"> MusicDot </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/alura-lingua.webp"
+                            loading="lazy"
+                            alt="Alura Lingua"
+                        />
+                        <a href="#" class="list__label"> Alura Lingua </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/pm3.webp"
+                            loading="lazy"
+                            alt="PM3"
+                        />
+                        <a href="#" class="list__label"> PM3 </a>
+                    </dd>
+                </dl>
+                <dl class="footer__list list">
+                    <dt class="list__title">COMUNIDADE</dt>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/hipsters-ponto-tech.webp"
+                            loading="lazy"
+                            alt="Hipsters ponto Tech"
+                        />
+                        <a href="#" class="list__label">
+                            Hipsters ponto Tech
+                        </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/scuba-dev.webp"
+                            loading="lazy"
+                            alt="Scuba Dev"
+                        />
+                        <a href="#" class="list__label"> Scuba Dev </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/layers-ponto-tech.webp"
+                            loading="lazy"
+                            alt="Layers Ponto Tech"
+                        />
+                        <a href="#" class="list__label"> Layers Ponto Tech </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/like-a-boss.webp"
+                            loading="lazy"
+                            alt="Like a Boss"
+                        />
+                        <a href="#" class="list__label"> Like a Boss </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/carriera-sem-fronteira.webp"
+                            loading="lazy"
+                            alt="Carreira sem Fronteira"
+                        />
+                        <a href="#" class="list__label">
+                            Carreira sem Fronteira
+                        </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/hipsters-ponto-jobs.webp"
+                            loading="lazy"
+                            alt="Hipsters Ponto Jobs"
+                        />
+                        <a href="#" class="list__label">
+                            Hipsters Ponto Jobs
+                        </a>
+                    </dd>
+                    <dd class="list__item">
+                        <img
+                            class="list__logo"
+                            src="/assets/images/footer/guj.webp"
+                            loading="lazy"
+                            alt="GUJ"
+                        />
+                        <a href="#" class="list__label"> GUJ </a>
+                    </dd>
+                </dl>
+            </div>
+        </footer>
+
+        <noscript>
+            <div class="noscript-message">
+                <h1>JavaScript Disabled</h1>
+                <p>Please enable JavaScript to view this website.</p>
+            </div>
+        </noscript>
+
         <script type="module" src="./src/script/index.js"></script>
+        <script type="text/template" id="slider-dot-template">
+            <button class="slider__dot">
+            </button>
+        </script>
     </body>
 </html>

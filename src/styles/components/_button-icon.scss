@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.button-icon {
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: px-to-rem(12);
+    cursor: pointer;
+    border-radius: px-to-rem(15);
+
+    &--mobile-only {
+        @include respond-above('medium') {
+            display: none;
+        }
+    }
+
+    &__icon {
+        font-size: px-to-rem(32);
+        color: $color-secondary;
+    }
+
+    &__label {
+        @include text-size('lg');
+        display: none;
+
+        @include respond-above('large') {
+            display: block;
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-secondary;
+        outline-offset: 2px;
+    }
+
+    &:hover {
+        outline: 2px solid $color-secondary;
+    }
+}

@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.hero {
+    background: $color-secondary-gradient;
+    color: $color-bg;
+    text-align: center;
+
+    &__container {
+        @include flexbox(column, flex-start, center, px-to-rem(24));
+        width: 100%;
+        padding-block: px-to-rem(32);
+
+        @include respond-above('medium') {
+            padding-block: px-to-rem(84);
+        }
+    }
+
+    &__heading {
+        @include flexbox(column, flex-start, center, px-to-rem(8));
+        width: 100%;
+
+        @include respond-above('medium') {
+            gap: px-to-rem(2);
+        }
+    }
+
+    &__title {
+        @include text-size('md');
+        @include text-weight('bold');
+
+        @include respond-above('medium') {
+            @include text-size('4xl');
+        }
+    }
+
+    &__subtitle {
+        max-width: px-to-rem(316);
+        @include text-size('base');
+        @include text-weight('medium');
+        @include clamp-lines(4);
+
+        @include respond-above('medium') {
+            max-width: unset;
+        }
+    }
+}

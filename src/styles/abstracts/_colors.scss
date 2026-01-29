@@ -1,0 +1,21 @@
+// Base Colors
+$color-bg: #ffffff;
+$color-bg-muted: #ebecee;
+$color-text: #000000;
+$color-text-footer: #464646;
+$color-muted: #c4c4c4;
+
+// Brand colors
+$color-primary: #eb9b00;
+$color-secondary: #002f52;
+$color-secondary-accent: #326589;
+
+// Component Colors
+$color-separator: #858585;
+
+// Brand Gradient
+$color-secondary-gradient: linear-gradient(
+    90deg,
+    $color-secondary,
+    $color-secondary-accent
+);

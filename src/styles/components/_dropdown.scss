@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+.dropdown {
+    position: relative;
+
+    &__trigger {
+        &--active {
+            background: $color-secondary-gradient;
+            color: $color-bg;
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        z-index: 10;
+        top: 100%;
+        background-color: $color-bg;
+        outline: 2px solid $color-separator;
+        width: px-to-rem(300);
+        max-height: 70vh;
+        overflow-y: auto;
+
+        // Animation
+        transform: scaleY(0);
+        transform-origin: top;
+        transition:
+            transform 0.2s,
+            visibility 0.2s;
+        visibility: hidden;
+        pointer-events: none;
+
+        @include respond-above('medium') {
+            width: unset;
+        }
+
+        &--open {
+            transform: scaleY(1);
+            visibility: visible;
+            pointer-events: auto;
+        }
+    }
+
+    &__item {
+        @include flexbox;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        padding: px-to-rem(16) px-to-rem(24);
+        width: 100%;
+        cursor: pointer;
+
+        &:hover,
+        &:focus-visible {
+            background: $color-secondary-gradient;
+            color: $color-bg;
+        }
+    }
+
+    &__group {
+        padding: px-to-rem(24);
+        color: $color-primary;
+        @include text-weight('bold');
+    }
+}

@@ -1,0 +1,11 @@
+@use 'sass:math';
+@use 'variables' as *;
+
+/// Convert given pixels value to rem according to font scale
+/// @access public
+/// @param {Number} value - Value to convert
+/// @requires $base-font-size
+@function px-to-rem($value) {
+    $remValue: math.div($value, $base-font-size) * 1rem;
+    @return $remValue;
+}

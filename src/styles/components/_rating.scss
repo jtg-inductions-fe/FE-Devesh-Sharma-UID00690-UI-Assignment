@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+.rating {
+    font-size: px-to-rem(14);
+    padding: px-to-rem(4) 0 0 px-to-rem(4);
+
+    &__star {
+        color: $color-primary;
+    }
+}
