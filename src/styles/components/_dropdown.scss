@@ -17,6 +17,8 @@
         background-color: $color-bg;
         outline: 2px solid $color-separator;
         width: px-to-rem(300);
+        max-height: 70vh;
+        overflow-y: auto;
 
         // Animation
         transform: scaleY(0);
